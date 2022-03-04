@@ -26,9 +26,6 @@ const Navigation = ({ isLoaded }) => {
             <NavLink className="nav-link" exact to="/">
                 Home
             </NavLink>
-            <NavLink className="nav-link" to="/api/csrf/restore">
-                Restore Tokens
-            </NavLink>
             {isLoaded && sessionLinks}
         </nav>
     );
