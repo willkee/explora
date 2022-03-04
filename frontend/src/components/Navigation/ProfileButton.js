@@ -23,12 +23,11 @@ const ProfileButton = ({ user }) => {
     });
 
     return (
-        <>
+        <div className="profile-outer-container">
             <div className={showMenu ? "profile-icon lit" : "profile-icon"}>
-                <i
-                    className="fa-solid fa-user"
-                    onClick={() => setShowMenu(!showMenu)}
-                ></i>
+                <button className="profile-button" onClick={openMenu}>
+                    <i className="fa-solid fa-user"></i>
+                </button>
             </div>
             {showMenu && (
                 <div className="dropdown">
@@ -57,7 +56,7 @@ const ProfileButton = ({ user }) => {
                     </button>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

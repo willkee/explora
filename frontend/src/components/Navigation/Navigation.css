@@ -29,16 +29,23 @@
     margin-top: 20px;
 }
 
+.profile-outer-container {
+    position: relative;
+    display: inline-block;
+}
+
 .dropdown {
     background-color: rgb(218, 151, 28);
     display: flex;
     position: absolute;
-    top: 42px;
-    right: 10px;
+    top: 35px;
+    right: 0;
     flex-direction: column;
     padding: 20px;
     border-radius: 5px;
     font-size: 14px;
+    box-shadow: 1px 1px 10px black;
+    z-index: 1;
 }
 
 .td-row-header {
@@ -46,15 +53,27 @@
     padding-right: 10px;
 }
 
+.profile-button {
+    border: none;
+    background-color: transparent;
+}
 .profile-icon {
     padding: 10px;
     cursor: pointer;
+    z-index: 99;
 }
-.profile-icon:hover {
-    color: rgb(156, 89, 13);
-}
+
 .profile-icon.lit {
     background-color: rgb(218, 151, 28);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.fa-solid.fa-user {
+    font-size: 20px;
+}
+.fa-solid.fa-user:hover {
+    color: rgb(156, 89, 13);
 }
