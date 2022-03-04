@@ -1,0 +1,11 @@
+.main-header {
+    background-color: rgb(165, 108, 42);
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
