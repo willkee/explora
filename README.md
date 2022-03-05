@@ -1,9 +1,18 @@
 # <img src="https://github.com/willkee/explora/blob/main/frontend/public/images/logo-dark.png" style="width:50px;" />    Explora
 
-Explora is a Quora clone where users can ask the community questions related to travel to various destinations.
+<a href="https://github.com/willkee/explora/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=willkee/explora" />
+</a>
+
+#### Author: Will Kee
+
 
 ## Link to Live Site
 [Explora Live Site](https://explora-quora-clone.herokuapp.com/)
+
+## Description
+Explora is a Quora clone where users can ask the community questions related to travel to various destinations.
+
 
 ## Technologies
 <br>
