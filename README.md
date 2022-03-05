@@ -1,3 +1,5 @@
-# Explora
+# <img src="https://github.com/willkee/explora/blob/main/frontend/public/images/logo-dark.png" style="width:50px;" />    Explora
 
-Explora is a Quora clone where users can ask the community questions related to travel to different places, or any outdoor activities such as hiking or camping.
+Explora is a Quora clone where users can ask the community questions related to travel to various destinations.
+
+<img src="https://github.com/devicons/devicon/blob/v2.14.0/icons/react/react-original-wordmark.svg" style="width:75px;" />
