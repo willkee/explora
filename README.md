@@ -1,4 +1,5 @@
-# <img src="https://github.com/willkee/explora/blob/main/frontend/public/images/explora-logo-dark-new.svg" style="width:50px;" />    Explora
+# <img src="https://github.com/willkee/explora/blob/main/frontend/public/images/explora-logo-new.svg" style="width:250px;" /> 
+
 
 <a href="https://github.com/willkee/explora/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=willkee/explora" />
