@@ -1,4 +1,4 @@
-<img src="./frontend/public/images/explora-logo-new.svg" />
+<img src="./frontend/public/images/explora-logo-new.svg" style="width:200px;" />
 
 ## Table of Contents
 
@@ -26,6 +26,7 @@ Explora is a Quora clone where users can ask the community questions related to 
 
 <br>
 <p float="left">
+
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" style="width:75px;" />
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" style="width:75px;" />
@@ -47,6 +48,7 @@ Explora is a Quora clone where users can ask the community questions related to 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" style="width:75px;" />
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" style="width:75px;" />
+
 </p>
 
 <br>
