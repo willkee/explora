@@ -2,24 +2,23 @@
 
 ## Table of Contents
 
-* [Link to Live Site](https://github.com/willkee/explora/edit/main/README.md#link-to-live-site)
-* [Description](https://github.com/willkee/explora/edit/main/README.md#description)
-* [Technologies](https://github.com/willkee/explora/edit/main/README.md#technologies)
-
-
+-   [Link to Live Site](https://github.com/willkee/explora/edit/main/README.md#link-to-live-site)
+-   [Description](https://github.com/willkee/explora/edit/main/README.md#description)
+-   [Technologies](https://github.com/willkee/explora/edit/main/README.md#technologies)
 
 ## Link to Live Site
-* [Explora Live Site](https://explora-quora-clone.herokuapp.com/)
+
+-   [Explora Live Site](https://explora-quora-clone.herokuapp.com/)
 
 ## Description
 
 Explora is a Quora clone where users can ask the community questions related to travel to various destinations.
 
-
 ## Technologies
+
 <br>
 <p float="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" style="width:75px;" /> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" style="width:75px;" />
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" style="width:75px;" />
   &nbsp;
@@ -44,11 +43,11 @@ Explora is a Quora clone where users can ask the community questions related to 
 
 ## Wireframes
 
-<img src="/frontend/public/wireframes/wireframe-landing.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/signup-modal-2.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/login-modal.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/wireframe-loggedin.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/question-notowner.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/question-owner.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/add-question.png" style="width:800px;" />
-<img src="/frontend/public/wireframes/edit-question.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/wireframe-landing.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/signup-modal-2.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/login-modal.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/wireframe-loggedin.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/question-notowner.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/question-owner.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/add-question.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/edit-question.png" style="width:800px;" />
