@@ -1,13 +1,10 @@
 .signup-form-container {
     display: flex;
-    position: absolute;
-    top: 200px;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    width: 50vw;
-    height: 80vw;
+    width: 100%;
 }
 
 .signup-form-element {
@@ -31,6 +28,10 @@
     border-radius: 10px;
     color: rgb(204, 204, 204);
     margin-bottom: 50px;
+}
+
+.errors-container li {
+    text-transform: capitalize;
 }
 
 .form-label {
@@ -64,4 +65,9 @@
 
 .signup-form-element button:hover {
     background-color: rgba(158, 158, 158, 0.418);
+}
+
+.nav-link.signup-link {
+    border: none;
+    background-color: transparent;
 }
