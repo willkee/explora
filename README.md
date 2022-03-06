@@ -5,6 +5,8 @@
 -   [Link to Live Site](https://github.com/willkee/explora/edit/main/README.md#link-to-live-site)
 -   [Description](https://github.com/willkee/explora/edit/main/README.md#description)
 -   [Technologies](https://github.com/willkee/explora/edit/main/README.md#technologies)
+-   [Features](https://github.com/willkee/explora/edit/main/README.md#features)
+-   [Wireframes](https://github.com/willkee/explora/edit/main/README.md#wireframes)
     <br>
     <br>
 
@@ -13,13 +15,11 @@
 -   [Explora Live Site](https://explora-quora-clone.herokuapp.com/)
 
 <br>
-<br>
 
 ## Description
 
 Explora is a Quora clone where users can ask the community questions related to travel to various destinations.
 
-<br>
 <br>
 
 ## Technologies
@@ -50,6 +50,15 @@ Explora is a Quora clone where users can ask the community questions related to 
 </p>
 
 <br>
+
+## Features
+
+* The home page displays the most recent questions on the site
+* Users can post questions
+* Users can post answers to existing questions
+* Users can upvote answers to questions
+* Unauthenticated users can view all questions and answers
+
 <br>
 
 ## Wireframes
