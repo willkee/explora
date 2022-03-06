@@ -42,4 +42,14 @@ Explora is a Quora clone where users can ask the community questions related to 
   <img src="https://github.com/devicons/devicon/blob/v2.14.0/icons/figma/figma-original.svg" style="width:75px;" />
 </p>
 
+## Wireframes
+
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/wireframe-landing.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/signup-modal-2.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/login-modal.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/wireframe-loggedin.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/question-notowner.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/question-owner.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/add-question.png" style="width:800px;" />
+<img src="https://github.com/willkee/explora/blob/main/frontend/public/wireframes/edit-question.png" style="width:800px;" />
 
