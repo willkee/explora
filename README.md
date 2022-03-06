@@ -1,4 +1,4 @@
-<img src="./frontend/public/images/explora-logo-new.svg" style="width:300px;" />
+<img src="./frontend/public/images/explora-logo-new.svg" />
 
 ## Table of Contents
 
@@ -53,11 +53,11 @@ Explora is a Quora clone where users can ask the community questions related to 
 
 ## Features
 
-* The home page displays the most recent questions on the site
-* Users can post questions
-* Users can post answers to existing questions
-* Users can upvote answers to questions
-* Unauthenticated users can view all questions and answers
+-   The home page displays the most recent questions on the site
+-   Users can post questions
+-   Users can post answers to existing questions
+-   Users can upvote answers to questions
+-   Unauthenticated users can view all questions and answers
 
 <br>
 
