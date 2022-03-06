@@ -9,8 +9,17 @@ const Navigation = ({ isLoaded }) => {
 
     let sessionLinks;
     if (sessionUser) {
-        sessionLinks = <ProfileButton user={sessionUser} />;
+        // User is logged in
+        sessionLinks = (
+            <div className="session-links-container">
+                <span className="welcome-back">
+                    {sessionUser && `Welcome back ${sessionUser.username}!`}
+                </span>
+                <ProfileButton user={sessionUser} />
+            </div>
+        );
     } else {
+        // User is not logged in
         sessionLinks = (
             <>
                 <LoginFormModal />
@@ -23,10 +32,14 @@ const Navigation = ({ isLoaded }) => {
 
     return (
         <nav className="main-navbar">
-            <NavLink className="nav-link" exact to="/">
-                Home
+            <NavLink className="main-logo-container" exact to="/">
+                <img
+                    className="main-logo"
+                    src="/images/explora-logo-dark-new.svg"
+                    alt="Explora logo"
+                />
             </NavLink>
-            {isLoaded && sessionLinks}
+            <div className="navlink-container">{isLoaded && sessionLinks}</div>
         </nav>
     );
 };

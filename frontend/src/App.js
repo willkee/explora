@@ -21,12 +21,10 @@ function App() {
     return (
         isLoaded && (
             <div className="super-container">
-                <Header />
+                {/* <Header /> */}
                 <Navigation isLoaded={isLoaded} />
                 <Switch>
-                    <Route exact path="/">
-                        <h1>Home Page</h1>
-                    </Route>
+                    <Route exact path="/"></Route>
                     <Route path="/login">
                         <LoginForm />
                     </Route>
