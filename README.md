@@ -1,4 +1,4 @@
-<img src="https://github.com/willkee/explora/blob/main/frontend/public/images/explora-logo-new.svg" style="width:300px;" />
+<img src="./frontend/public/images/explora-logo-new.svg" style="width:300px;" />
 
 ## Table of Contents
 
