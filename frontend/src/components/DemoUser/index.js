@@ -1,17 +1,30 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import "./DemoUser.css";
 
 const DemoUser = () => {
     const dispatch = useDispatch();
+    const demoLogin = async (e) => {
+        e.preventDefault();
 
-    const demoLogIn = async () => {
-        await dispatch(sessionActions.loginUser());
+        try {
+            await dispatch(
+                sessionActions.loginUser({
+                    credential: "Demo",
+                    password: "demopassword",
+                })
+            );
+        } catch (err) {
+            console.error("Error: ", err);
+        }
     };
 
     return (
         <div>
-            <button onClick={() => demoLogIn()}>Demo User</button>
+            <form onSubmit={demoLogin}>
+                <button className="nav-link demo-link">Demo User</button>
+            </form>
         </div>
     );
 };
