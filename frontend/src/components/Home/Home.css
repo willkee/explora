@@ -1,0 +1,14 @@
+.outer-content-container {
+    position: absolute;
+    display: flex;
+    top: 180px;
+    bottom: 0;
+    width: 75vw;
+    background-color: #4b4b4b;
+}
+
+.session-content.logged-out {
+    padding-top: 20px;
+    padding-left: 20px;
+    color: rgb(192, 192, 192);
+}

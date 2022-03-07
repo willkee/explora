@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import SignupForm from "./components/SignupFormModal";
-import LoginForm from "./components/LoginFormModal/LoginForm";
+import Home from "./components/Home";
+// import SignupForm from "./components/SignupFormModal";
+// import LoginForm from "./components/LoginFormModal/LoginForm";
 import * as sessionActions from "./store/session";
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
             <div className="super-container">
                 <Navigation isLoaded={isLoaded} />
                 <Switch>
-                    <Route exact path="/"></Route>
+                    <Route exact path="/">
+                        <Home isLoaded={isLoaded} />
+                    </Route>
                     {/* <Route path="/login">
                         <LoginForm />
                     </Route>
