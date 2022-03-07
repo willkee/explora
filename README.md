@@ -69,7 +69,7 @@ Explora is a Quora clone where users can ask the community questions related to 
 <img src="./frontend/public/wireframes/signup-modal-2.png" style="width:800px;" />
 <img src="./frontend/public/wireframes/login-modal.png" style="width:800px;" />
 <img src="./frontend/public/wireframes/wireframe-loggedin.png" style="width:800px;" />
-<img src="./frontend/public/wireframes/question-notowner.png" style="width:800px;" />
-<img src="./frontend/public/wireframes/question-owner.png" style="width:800px;" />
-<img src="./frontend/public/wireframes/add-question.png" style="width:800px;" />
-<img src="./frontend/public/wireframes/edit-question.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/question-not-owner-2.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/question-owner-2.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/add-question-2.png" style="width:800px;" />
+<img src="./frontend/public/wireframes/edit-question-2.png" style="width:800px;" />
