@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
     );
     User.associate = function (models) {
         User.hasMany(models.Question, { foreignKey: "ownerId" });
+        User.hasMany(models.Answer, { foreignKey: "userId" });
     };
 
     User.prototype.toSafeObject = function () {
