@@ -23,12 +23,12 @@ function App() {
                 <Navigation isLoaded={isLoaded} />
                 <Switch>
                     <Route exact path="/"></Route>
-                    <Route path="/login">
+                    {/* <Route path="/login">
                         <LoginForm />
                     </Route>
                     <Route path="/signup">
                         <SignupForm />
-                    </Route>
+                    </Route> */}
                 </Switch>
             </div>
         )
