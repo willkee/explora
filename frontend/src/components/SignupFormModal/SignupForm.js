@@ -39,6 +39,16 @@ const SignupForm = () => {
         }
     };
 
+    let uniqueErrors;
+    if (validationErrors.length > 0) {
+        uniqueErrors = validationErrors.filter((error) => {
+            const lcError = error.toLowerCase();
+            return lcError !== "invalid value";
+        });
+    } else {
+        uniqueErrors = [];
+    }
+
     return (
         <div className="signup-form-container">
             <h1>Sign Up</h1>
@@ -49,7 +59,7 @@ const SignupForm = () => {
                         : "hidden-error-container"
                 }
             >
-                {validationErrors.map((error, index) => (
+                {uniqueErrors.map((error, index) => (
                     <li key={index}>{error}</li>
                 ))}
             </ul>
