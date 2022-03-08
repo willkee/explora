@@ -51,4 +51,47 @@ router.post(
     })
 );
 
+router.get(
+    "/:questionId",
+    asyncHandler(async (req, res) => {
+        const questionId = parseInt(req.params.questionId, 10);
+
+        const selectedQuestion = await Question.findOne({
+            include: [
+                { model: User },
+                { model: Answer, include: { model: User } },
+            ],
+            where: { id: questionId },
+        });
+        return res.json(selectedQuestion);
+    })
+);
+
+router.put(
+    "/:questionId",
+    asyncHandler(async (req, res) => {
+        const { title, description } = req.body;
+        const questionId = parseInt(req.params.questionId, 10);
+
+        const selectedQuestion = await Question.findOne({
+            where: { id: questionId },
+        });
+
+        try {
+            if (selectedQuestion) {
+                selectedQuestion.title = title;
+                selectedQuestion.description = description;
+                return res.json(selectedQuestion);
+            }
+        } catch (err) {
+            console.log("Error - Question Not Found: ", err);
+        }
+    })
+);
+
+router.delete(
+    "/:questionId",
+    asyncHandler(async (req, res) => {})
+);
+
 module.exports = router;

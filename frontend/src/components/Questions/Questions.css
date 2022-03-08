@@ -54,3 +54,17 @@
     margin-top: 10px;
     font-size: 12px;
 }
+
+.link-to-single-question {
+    text-decoration: none;
+    color: black;
+}
+.link-to-single-question div:hover {
+    text-decoration: none;
+    color: rgb(18, 28, 170);
+}
+
+.link-to-single-question:visited {
+    text-decoration: none;
+    color: black;
+}

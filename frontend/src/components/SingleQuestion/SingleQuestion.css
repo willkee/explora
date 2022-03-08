@@ -1,0 +1,20 @@
+.single-question-container {
+    display: flex;
+    position: absolute;
+    top: 200px;
+    flex-direction: column;
+    width: 80%;
+}
+
+.single-question-container h3 {
+    margin-top: 60px;
+}
+
+.all-answers-container {
+    margin: 10px 0;
+}
+
+.single-answer-container {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
