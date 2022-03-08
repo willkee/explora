@@ -1,17 +1,18 @@
-import { useState } from "react";
-import { Redirect, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import * as questionActions from "../../store/questions";
 
-const AddQuestion = () => {
+const AddQuestion = ({ setShowQuestionModal }) => {
     const dispatch = useDispatch();
-    const sessionUser = useSelector((state) => state.session.user);
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [validationErrors, setValidationErrors] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    if (!sessionUser) return <Redirect to="/" />;
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,40 +25,47 @@ const AddQuestion = () => {
                     description,
                 })
             );
+            setShowQuestionModal(false);
         } catch (err) {
-            if (err) {
-                const data = await err.json();
-                data && data.errors && setValidationErrors(data.errors);
-            }
+            const data = await err.json();
+            data && data.errors && setValidationErrors(data.errors);
         }
     };
 
     return (
-        <div className="add-question-container">
-            <h1>Add Question</h1>
-            <ul className="errors-container">
-                {validationErrors.map((error, idx) => (
-                    <li key={idx}>{error}</li>
-                ))}
-            </ul>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title</label>
-                <input
-                    type="text"
-                    name="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                ></input>
-                <label htmlFor="description">Description</label>
-                <input
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                ></input>
-                <button type="submit">Post</button>
-            </form>
-        </div>
+        isLoaded && (
+            <div className="add-question-container">
+                <h1>Add Question</h1>
+                <ul className="errors-container">
+                    {validationErrors.map((error, idx) => (
+                        <li key={idx}>{error}</li>
+                    ))}
+                </ul>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="title">Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    ></input>
+                    <label htmlFor="description">Description</label>
+                    <input
+                        type="text"
+                        name="description"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    ></input>
+                    <button type="submit">Post</button>
+                    <button
+                        type="button"
+                        onClick={() => setShowQuestionModal(false)}
+                    >
+                        Cancel
+                    </button>
+                </form>
+            </div>
+        )
     );
 };
 

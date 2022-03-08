@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import AddQuestion from "./AddQuestion";
+import "./AddQuestion.css";
 
 const AddQuestionModal = () => {
     const [showQuestionModal, setShowQuestionModal] = useState(false);
 
     return (
-        <div>
+        <div className="add-q-container">
             <button
-                className="nav-link add-question-link"
+                className="nav-link-add-question"
                 onClick={() => setShowQuestionModal(true)}
             >
                 <i className="fa-regular fa-square-plus"></i>
@@ -16,7 +17,7 @@ const AddQuestionModal = () => {
             </button>
             {showQuestionModal && (
                 <Modal onClose={() => setShowQuestionModal(false)}>
-                    <AddQuestion />
+                    <AddQuestion setShowQuestionModal={setShowQuestionModal} />
                 </Modal>
             )}
         </div>

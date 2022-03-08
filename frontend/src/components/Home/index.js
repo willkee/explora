@@ -11,13 +11,7 @@ const Home = ({ isLoaded }) => {
 
     if (sessionUser) {
         // Logged in
-        sessionContent = (
-            // <button className="add-question">
-            //     <i className="fa-regular fa-square-plus"></i>
-            //     <span>ADD QUESTION</span>
-            // </button>
-            <AddQuestionModal />
-        );
+        sessionContent = <AddQuestionModal />;
     } else {
         // Not logged in
         sessionContent = (

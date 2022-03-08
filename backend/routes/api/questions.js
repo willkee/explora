@@ -47,7 +47,6 @@ router.post(
             where: { id: questionX.id },
         });
 
-        console.log(newQuestion);
         return res.json(newQuestion);
     })
 );

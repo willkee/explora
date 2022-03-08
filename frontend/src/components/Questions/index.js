@@ -27,7 +27,6 @@ const QuestionList = () => {
             <div className="question-container">
                 {questions.map((question, idx) => (
                     <div key={idx} className="question-box">
-                        {console.log(question.User)}
                         <div className="question-profile">
                             <i className="fa-solid fa-user question"></i>
                             <div className="profile-desc">
