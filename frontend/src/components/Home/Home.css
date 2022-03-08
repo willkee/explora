@@ -25,6 +25,7 @@
     top: 50px;
     left: 0;
     right: 0;
+    bottom: 550px;
     width: 100%;
 }
 
@@ -34,7 +35,7 @@
     padding-right: 10px;
 }
 
-.message-loggedin {
+.add-question {
     position: absolute;
     top: 0;
     right: 0;
@@ -44,13 +45,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(39, 39, 39);
+    border: none;
+    transition: background-color 0.25s linear;
 }
 
-.message-loggedin i {
+.add-question:hover {
+    background-color: rgb(0, 19, 59);
+}
+
+.add-question:active {
+    background-color: rgb(0, 0, 0);
+    color: black;
+}
+
+.add-question i {
     font-size: 30px;
     color: #006bc9;
 }
-.message-loggedin span {
+.add-question span {
     margin-left: 20px;
     color: #006bc9;
     font-size: 20px;

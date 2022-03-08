@@ -23,8 +23,8 @@ router.get(
         const questions = await Question.findAll({
             include: [{ model: Answer }, { model: User }],
             limit: 40,
+            order: [["id", "DESC"]],
         });
-
         return res.json({ questions });
     })
 );
@@ -37,13 +37,18 @@ router.post(
         const { title, description } = req.body;
         const { user } = req;
 
-        const question = await Question.create({
+        const questionX = await Question.create({
             ownerId: user.id,
             title,
             description,
         });
+        const newQuestion = await Question.findOne({
+            include: [{ model: Answer }, { model: User }],
+            where: { id: questionX.id },
+        });
 
-        return res.json(question);
+        console.log(newQuestion);
+        return res.json(newQuestion);
     })
 );
 

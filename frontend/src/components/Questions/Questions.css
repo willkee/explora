@@ -38,6 +38,9 @@
     font-size: 16px;
 }
 
+.question-username-owner {
+    color: blue;
+}
 .question-date {
     font-size: 12px;
     align-items: center;

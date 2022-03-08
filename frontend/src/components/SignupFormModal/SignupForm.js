@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
@@ -12,8 +12,11 @@ const SignupForm = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [validationErrors, setValidationErrors] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    if (sessionUser) return <Redirect to="/" />;
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -50,61 +53,63 @@ const SignupForm = () => {
     }
 
     return (
-        <div className="signup-form-container">
-            <h1>Sign Up</h1>
-            <ul
-                className={
-                    validationErrors.length > 0
-                        ? "errors-container"
-                        : "hidden-error-container"
-                }
-            >
-                {uniqueErrors.map((error, index) => (
-                    <li key={index}>{error}</li>
-                ))}
-            </ul>
-            <form className="signup-form-element" onSubmit={handleSubmit}>
-                <label className="form-label" htmlFor="username">
-                    Username
-                </label>
-                <input
-                    type="text"
-                    name="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                ></input>
-                <label className="form-label" htmlFor="email">
-                    Email
-                </label>
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                ></input>
-                <label className="form-label" htmlFor="password">
-                    Password
-                </label>
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    autoComplete="off"
-                    onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <label className="form-label" htmlFor="confirmPassword">
-                    Confirm Password
-                </label>
-                <input
-                    type="password"
-                    name="confirmPassword"
-                    value={confirmPassword}
-                    autoComplete="off"
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                ></input>
-                <button>Sign Up</button>
-            </form>
-        </div>
+        isLoaded && (
+            <div className="signup-form-container">
+                <h1>Sign Up</h1>
+                <ul
+                    className={
+                        validationErrors.length > 0
+                            ? "errors-container"
+                            : "hidden-error-container"
+                    }
+                >
+                    {uniqueErrors.map((error, index) => (
+                        <li key={index}>{error}</li>
+                    ))}
+                </ul>
+                <form className="signup-form-element" onSubmit={handleSubmit}>
+                    <label className="form-label" htmlFor="username">
+                        Username
+                    </label>
+                    <input
+                        type="text"
+                        name="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    ></input>
+                    <label className="form-label" htmlFor="email">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    ></input>
+                    <label className="form-label" htmlFor="password">
+                        Password
+                    </label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        autoComplete="off"
+                        onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                    <label className="form-label" htmlFor="confirmPassword">
+                        Confirm Password
+                    </label>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        autoComplete="off"
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                    ></input>
+                    <button>Sign Up</button>
+                </form>
+            </div>
+        )
     );
 };
 

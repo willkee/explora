@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./Home.css";
 import QuestionList from "../Questions";
+import AddQuestionModal from "../AddQuestionModal";
 
 const Home = ({ isLoaded }) => {
     const sessionUser = useSelector((state) => state.session.user);
@@ -11,10 +12,11 @@ const Home = ({ isLoaded }) => {
     if (sessionUser) {
         // Logged in
         sessionContent = (
-            <div className="message-loggedin">
-                <i className="fa-regular fa-square-plus"></i>
-                <span>ADD QUESTION</span>
-            </div>
+            // <button className="add-question">
+            //     <i className="fa-regular fa-square-plus"></i>
+            //     <span>ADD QUESTION</span>
+            // </button>
+            <AddQuestionModal />
         );
     } else {
         // Not logged in
