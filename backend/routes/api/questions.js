@@ -23,7 +23,7 @@ router.get(
         const questions = await Question.findAll({
             include: [{ model: Answer }, { model: User }],
             limit: 40,
-            order: [["id", "DESC"]],
+            order: [["title", "ASC"]],
         });
         return res.json({ questions });
     })

@@ -36,12 +36,21 @@ const AddQuestion = ({ setShowQuestionModal }) => {
         isLoaded && (
             <div className="add-question-container">
                 <h1>Add Question</h1>
-                <ul className="errors-container">
+                <ul
+                    className={
+                        validationErrors.length > 0
+                            ? "errors-container"
+                            : "no-errors"
+                    }
+                >
                     {validationErrors.map((error, idx) => (
                         <li key={idx}>{error}</li>
                     ))}
                 </ul>
-                <form onSubmit={handleSubmit}>
+                <form
+                    className="add-question-form-element"
+                    onSubmit={handleSubmit}
+                >
                     <label htmlFor="title">Title</label>
                     <input
                         type="text"
@@ -50,19 +59,23 @@ const AddQuestion = ({ setShowQuestionModal }) => {
                         onChange={(e) => setTitle(e.target.value)}
                     ></input>
                     <label htmlFor="description">Description</label>
-                    <input
-                        type="text"
+                    <textarea
                         name="description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                    ></input>
-                    <button type="submit">Post</button>
-                    <button
-                        type="button"
-                        onClick={() => setShowQuestionModal(false)}
-                    >
-                        Cancel
-                    </button>
+                    ></textarea>
+                    <div className="add-q-button-container">
+                        <button className="add-q-submit" type="submit">
+                            Post
+                        </button>
+                        <button
+                            className="add-q-cancel"
+                            type="button"
+                            onClick={() => setShowQuestionModal(false)}
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </form>
             </div>
         )

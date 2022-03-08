@@ -18,6 +18,7 @@ function App() {
 
         restore();
     }, [dispatch]);
+
     return (
         isLoaded && (
             <div className="super-container">
