@@ -101,7 +101,21 @@ router.put(
 
 router.delete(
     "/:questionId",
-    asyncHandler(async (req, res) => {})
+    asyncHandler(async (req, res) => {
+        const paramId = parseInt(req.params.questionId, 10);
+        const question = await Question.findByPk(paramId);
+
+        if (question) {
+            const id = question.id;
+
+            await Question.destroy({ where: { id } });
+            console.log(res.json({ id: question.id }));
+
+            return res.json({ id });
+        } else {
+            throw new Error("Question cannot be found.");
+        }
+    })
 );
 
 module.exports = router;
