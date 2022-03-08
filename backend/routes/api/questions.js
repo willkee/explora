@@ -105,8 +105,24 @@ router.delete(
         const paramId = parseInt(req.params.questionId, 10);
         const question = await Question.findByPk(paramId);
 
+        const isEmpty = (obj) => Object.keys(obj).length === 0;
+
         if (question) {
             const id = question.id;
+
+            const relatedAnswers = await Answer.findAll({
+                where: {
+                    questionId: id,
+                },
+            });
+
+            if (!isEmpty(relatedAnswers)) {
+                await Answer.destroy({
+                    where: {
+                        questionId: id,
+                    },
+                });
+            }
 
             await Question.destroy({ where: { id } });
             console.log(res.json({ id: question.id }));
