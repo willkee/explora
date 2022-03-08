@@ -1,0 +1,56 @@
+.question-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.question-box {
+    background-color: rgb(206, 206, 206);
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.fa-solid.fa-user.question:hover {
+    cursor: auto;
+    color: rgb(59, 59, 59);
+}
+
+.question-profile {
+    display: grid;
+    grid-template-columns: 10% 40%;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-desc {
+    align-items: center;
+}
+
+.fa-solid.fa-user.question {
+    cursor: auto;
+    color: rgb(59, 59, 59);
+}
+
+.question-username {
+    font-size: 16px;
+}
+
+.question-username-owner {
+    color: blue;
+}
+.question-date {
+    font-size: 12px;
+    align-items: center;
+}
+
+.question-title {
+    font-weight: bolder;
+}
+
+.num-answer-text {
+    margin-top: 10px;
+    font-size: 12px;
+}
