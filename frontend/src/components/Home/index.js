@@ -12,7 +12,7 @@ const Home = ({ isLoaded }) => {
         // Logged in
         sessionContent = (
             <div className="message-loggedin">
-                <i class="fa-regular fa-square-plus"></i>
+                <i className="fa-regular fa-square-plus"></i>
                 <span>ADD QUESTION</span>
             </div>
         );

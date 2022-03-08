@@ -32,7 +32,7 @@ const QuestionList = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>{question.title}</div>
+                        <div className="question-title">{question.title}</div>
                         <div className="num-answer-text">
                             {question.Answers.length} Answers
                         </div>

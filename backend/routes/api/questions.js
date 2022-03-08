@@ -22,7 +22,7 @@ router.get(
     asyncHandler(async (req, res) => {
         const questions = await Question.findAll({
             include: [{ model: Answer }, { model: User }],
-            limit: 10,
+            limit: 40,
         });
 
         return res.json({ questions });
