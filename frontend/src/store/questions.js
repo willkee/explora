@@ -63,7 +63,7 @@ export const editQuestion = (id, data) => async (dispatch) => {
         method: "PUT",
         body: JSON.stringify(data),
     });
-    const resJSON = res.json();
+    const resJSON = await res.json();
     await dispatch(questionEdit(resJSON));
     return resJSON;
 };
@@ -90,6 +90,7 @@ const questionReducer = (state = {}, action) => {
             return newState;
         }
         case EDIT_QUESTION: {
+            console.log("!!!#@#!#!#!@#@#", action);
             newState = {
                 ...state,
                 [action.edit.id]: { ...action.edit },

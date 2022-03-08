@@ -70,7 +70,6 @@ router.get(
 router.put(
     "/:questionId",
     asyncHandler(async (req, res) => {
-        const { title, description } = req.body;
         const questionId = parseInt(req.params.questionId, 10);
 
         const selectedQuestion = await Question.findOne({
@@ -79,9 +78,20 @@ router.put(
 
         try {
             if (selectedQuestion) {
-                selectedQuestion.title = title;
-                selectedQuestion.description = description;
-                return res.json(selectedQuestion);
+                await Question.update(req.body, {
+                    where: { id: questionId },
+                    returning: true,
+                    plain: true,
+                });
+
+                const question = await Question.findByPk(questionId, {
+                    include: [
+                        { model: User },
+                        { model: Answer, include: { model: User } },
+                    ],
+                });
+
+                return res.json(question);
             }
         } catch (err) {
             console.log("Error - Question Not Found: ", err);

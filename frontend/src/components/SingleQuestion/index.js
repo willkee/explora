@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneQuestion } from "../../store/questions";
+import EditQuestionModal from "../EditQuestionModal";
 import "./SingleQuestion.css";
 
 const SingleQuestion = () => {
@@ -27,6 +28,7 @@ const SingleQuestion = () => {
                 <div>
                     {new Date(question.createdAt).toDateString().slice(4)}
                 </div>
+                <EditQuestionModal question={question} />
                 <div>{question.description}</div>
                 <h3>Answers</h3>
                 <div className="all-answers-container">

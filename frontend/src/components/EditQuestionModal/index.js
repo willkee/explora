@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import EditQuestion from "./EditQuestion";
 
-const EditQuestionModal = () => {
+const EditQuestionModal = ({ question }) => {
     const [showQuestionModal, setShowQuestionModal] = useState(false);
 
     return (
@@ -15,7 +15,10 @@ const EditQuestionModal = () => {
             </button>
             {showQuestionModal && (
                 <Modal onClose={() => setShowQuestionModal(false)}>
-                    <EditQuestion setShowQuestionModal={setShowQuestionModal} />
+                    <EditQuestion
+                        question={question}
+                        setShowQuestionModal={setShowQuestionModal}
+                    />
                 </Modal>
             )}
         </div>
