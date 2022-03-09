@@ -32,7 +32,7 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
     return (
         isLoaded && (
             <div className="delete-question-container">
-                <h1>Are you sure you wish you delete this question?</h1>
+                <h1>Are you sure you want to delete this question?</h1>
                 <form
                     className="delete-question-form-element"
                     onSubmit={handleSubmit}
