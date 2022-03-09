@@ -4,6 +4,13 @@
     width: 400px;
 }
 
+.delete-question-container h1 {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
 .delete-q-button-container {
     width: 100%;
     display: flex;
@@ -11,12 +18,13 @@
 }
 
 .delete-q-button-container button {
-    width: 100px;
+    width: 120px;
     height: 40px;
     border: 1px solid black;
     box-shadow: 2px 2px 5px black;
     color: white;
     transition: background-color linear 0.25s;
+    border-radius: 5px;
 }
 
 .delete-q {

@@ -86,19 +86,28 @@
 }
 
 .add-q-button-container button {
-    width: 100px;
+    width: 120px;
     height: 40px;
     text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color linear 0.25s;
 }
 
 .add-q-submit {
-    background-color: rgb(0, 0, 110);
+    background-color: #012c52;
+    color: white;
+    border: none;
+}
+.add-q-submit:hover {
+    background-color: #034b8c;
+}
+
+.add-q-cancel {
+    background-color: rgb(109, 109, 109);
     color: white;
     border: none;
 }
 
-.add-q-cancel {
-    background-color: rgb(39, 39, 39);
-    color: white;
-    border: none;
+.add-q-cancel:hover {
+    background-color: rgb(88, 88, 88);
 }

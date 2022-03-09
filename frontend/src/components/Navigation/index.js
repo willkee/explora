@@ -32,7 +32,11 @@ const Navigation = ({ isLoaded }) => {
     }
 
     return (
-        <nav className="main-navbar">
+        <nav
+            className={
+                sessionUser ? "main-navbar" : "main-navbar logged-out-main-nav"
+            }
+        >
             <NavLink className="main-logo-container" exact to="/">
                 <img
                     className="main-logo"

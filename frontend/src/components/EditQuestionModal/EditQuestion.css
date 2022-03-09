@@ -42,12 +42,13 @@
 }
 
 .edit-q-button-container button {
-    width: 100px;
+    width: 120px;
     height: 40px;
     border: none;
     color: white;
     text-transform: uppercase;
     transition: background-color linear 0.2s;
+    border-radius: 5px;
 }
 
 .edit-q-submit {
