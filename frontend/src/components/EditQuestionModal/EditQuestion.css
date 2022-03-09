@@ -3,7 +3,63 @@
     flex-direction: column;
 }
 
+.edit-question-container h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.edit-question-form-element {
+    width: 100%;
+}
 .edit-q-inputs {
     display: flex;
     flex-direction: column;
+}
+
+.edit-q-inputs label {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.edit-q-inputs input {
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 10px;
+}
+
+.edit-q-inputs textarea {
+    resize: none;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.edit-q-button-container {
+    margin-top: 20px;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-q-button-container button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    transition: background-color linear 0.2s;
+}
+
+.edit-q-submit {
+    background-color: rgb(32, 54, 155);
+}
+.edit-q-submit:hover {
+    background-color: rgb(12, 28, 99);
+}
+
+.edit-q-cancel {
+    background-color: rgb(78, 78, 78);
+}
+.edit-q-cancel:hover {
+    background-color: rgb(37, 37, 37);
 }

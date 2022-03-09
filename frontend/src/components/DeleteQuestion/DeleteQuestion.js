@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import * as questionActions from "../../store/questions";
+import "./DeleteQuestion.css";
 
 const DeleteQuestion = ({ setShowDeleteModal, question }) => {
     const dispatch = useDispatch();

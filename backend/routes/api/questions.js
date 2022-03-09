@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const { restoreUser } = require("../../utils/auth");
 
-const { Question, Answer, User, Sequelize } = require("../../db/models");
+const { Question, Answer, User } = require("../../db/models");
 
 const router = express.Router();
 
@@ -22,8 +22,7 @@ router.get(
     asyncHandler(async (req, res) => {
         const questions = await Question.findAll({
             include: [{ model: Answer }, { model: User }],
-            limit: 40,
-            order: [["title", "DESC"]],
+            order: [["id"]],
         });
         return res.json({ questions });
     })

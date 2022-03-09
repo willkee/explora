@@ -1,0 +1,33 @@
+.delete-question-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.delete-q-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete-q-button-container button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+    color: white;
+    transition: background-color linear 0.25s;
+}
+
+.delete-q {
+    background-color: rgb(138, 0, 0);
+}
+.delete-q:hover {
+    background-color: rgb(71, 0, 0);
+}
+.delete-q-cancel {
+    background-color: rgb(88, 88, 88);
+}
+.delete-q-cancel:hover {
+    background-color: rgb(34, 34, 34);
+}
