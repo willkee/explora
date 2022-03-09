@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import DeleteAnswerModal from "../DeleteAnswer";
 import * as answerActions from "../../store/answers";
 
 const Answers = ({ question }) => {
@@ -8,14 +9,16 @@ const Answers = ({ question }) => {
     const [validationErrors, setValidationErrors] = useState([]);
     const dispatch = useDispatch();
 
-    const answers = useSelector((state) => Object.values(state.answers));
-
-    const newestAnswersFirst = answers.reverse();
+    const sessionUser = useSelector((state) => state.session.user);
+    const answers = useSelector((state) =>
+        Object.values(state.answers)
+    ).reverse();
 
     const questionId = question.id;
 
     useEffect(() => {
         const loaded = async () => {
+            await dispatch(answerActions.clearState());
             await dispatch(answerActions.showAnswers(questionId));
             setIsLoaded(true);
         };
@@ -28,6 +31,7 @@ const Answers = ({ question }) => {
 
         try {
             await dispatch(answerActions.createAnswer(question.id, { answer }));
+            setAnswer("");
         } catch (err) {
             const data = await err.json();
             data && data.errors && setValidationErrors(data.errors);
@@ -64,7 +68,7 @@ const Answers = ({ question }) => {
                     </form>
                 </div>
                 <div className="all-answers-container">
-                    {newestAnswersFirst.map((answer, idx) => (
+                    {answers.map((answer, idx) => (
                         <div className="single-answer-container" key={idx}>
                             <div className="answer-user-info">
                                 <i className="fa-regular fa-user"></i>
@@ -80,6 +84,9 @@ const Answers = ({ question }) => {
                                 </div>
                             </div>
                             <div className="answer-text">{answer.answer}</div>
+                            {sessionUser.id === answer.userId && (
+                                <DeleteAnswerModal answer={answer} />
+                            )}
                         </div>
                     ))}
                 </div>

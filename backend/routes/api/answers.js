@@ -62,7 +62,16 @@ router.post(
 router.delete(
     "/answers/:answerId",
     asyncHandler(async (req, res) => {
-        //
+        const answerId = parseInt(req.params.answerId, 10);
+        const answer = await Answer.findByPk(answerId);
+
+        if (answer) {
+            const id = answer.id;
+            await Answer.destroy({ where: { id } });
+            return res.json({ id });
+        } else {
+            throw new Error("Answer cannot be found.");
+        }
     })
 );
 

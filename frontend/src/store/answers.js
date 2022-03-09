@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const GET_ANSWERS = "answers/GET_ANSWERS";
 const CREATE_ANSWER = "answers/CREATE_ANSWER";
 const DELETE_ANSWER = "answers/DELETE_ANSWER";
+const CLEAR_STATE = "answers/CLEAR_STATE";
 
 export const getAnswers = (data) => ({
     type: GET_ANSWERS,
@@ -13,6 +14,13 @@ export const addAnswer = (data) => ({
     type: CREATE_ANSWER,
     data,
 });
+
+export const deleteAnswer = (idToDelete) => ({
+    type: DELETE_ANSWER,
+    idToDelete,
+});
+
+export const clearAnswersInState = () => ({ type: CLEAR_STATE });
 
 export const showAnswers = (questionId) => async (dispatch) => {
     const res = await csrfFetch(`/api/questions/${questionId}/answers`);
@@ -37,6 +45,21 @@ export const createAnswer = (questionId, data) => async (dispatch) => {
     }
 };
 
+export const removeAnswer = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/answers/${id}`, {
+        method: "DELETE",
+    });
+    if (res.ok) {
+        const { id } = await res.json();
+        dispatch(deleteAnswer(id));
+        return id;
+    }
+};
+
+export const clearState = () => async (dispatch) => {
+    dispatch(clearAnswersInState());
+};
+
 const initialState = {};
 
 const answerReducer = (state = initialState, action) => {
@@ -58,8 +81,11 @@ const answerReducer = (state = initialState, action) => {
         }
         case DELETE_ANSWER: {
             newState = { ...state };
-            // TODO
+            delete newState[action.idToDelete];
             return newState;
+        }
+        case CLEAR_STATE: {
+            return {};
         }
         default:
             return state;
