@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOneQuestion } from "../../store/questions";
 import EditQuestionModal from "../EditQuestionModal";
 import DeleteQuestionModal from "../DeleteQuestion";
+import Answers from "../Answers";
 import "./SingleQuestion.css";
 
 const SingleQuestion = () => {
@@ -12,8 +13,6 @@ const SingleQuestion = () => {
     const dispatch = useDispatch();
 
     const sessionUser = useSelector((state) => state.session.user);
-    // console.log("sessionUser", sessionUser.id);
-
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -49,27 +48,7 @@ const SingleQuestion = () => {
                     </div>
                     <div>{question.description}</div>
                 </div>
-                <h3>Answers</h3>
-                <div className="all-answers-container">
-                    {question.Answers.map((answer, idx) => (
-                        <div className="single-answer-container" key={idx}>
-                            <div className="answer-user-info">
-                                <i className="fa-regular fa-user"></i>
-                                <div className="a-user-info-text">
-                                    <div className="a-user-username">
-                                        {answer.User.username}
-                                    </div>
-                                    <div>
-                                        {new Date(answer.createdAt)
-                                            .toDateString()
-                                            .slice(4)}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="answer-text">{answer.answer}</div>
-                        </div>
-                    ))}
-                </div>
+                <Answers question={question} />
             </div>
         )
     );

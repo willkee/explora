@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import * as questionActions from "../../store/questions";
 import "./DeleteQuestion.css";
 
@@ -13,8 +13,6 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
         setIsLoaded(true);
     }, []);
 
-    const history = useHistory();
-
     if (sessionUser.id !== question.ownerId) {
         alert(
             "Forbidden Operation: You shouldn't be here. Your IP address has been logged."
@@ -24,10 +22,7 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         await dispatch(questionActions.deleteQuestion(question.id));
-        // history.push("/");
-        // await dispatch(questionActions.deleteQuestion(question.id));
     };
 
     return (
