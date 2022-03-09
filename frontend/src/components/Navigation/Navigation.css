@@ -12,6 +12,10 @@
     justify-content: space-between;
 }
 
+.main-navbar.logged-out-main-nav {
+    background-color: #0d0d0d;
+}
+
 .main-logo-container {
     height: 100%;
 }

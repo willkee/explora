@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getQuestions } from "../../store/questions";
 import "./Questions.css";
 
@@ -13,6 +14,8 @@ const QuestionList = () => {
         return Object.values(state.questions);
     });
 
+    const questionsReversed = questions.reverse().slice(0, 20);
+
     useEffect(() => {
         const tester = async () => {
             await dispatch(getQuestions());
@@ -25,7 +28,7 @@ const QuestionList = () => {
     return (
         isLoaded && (
             <div className="question-container">
-                {questions.map((question, idx) => (
+                {questionsReversed.map((question, idx) => (
                     <div key={idx} className="question-box">
                         <div className="question-profile">
                             <i className="fa-solid fa-user question"></i>
@@ -49,7 +52,14 @@ const QuestionList = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="question-title">{question.title}</div>
+                        <Link
+                            className="link-to-single-question"
+                            to={`/api/questions/${question.id}`}
+                        >
+                            <div className="question-title">
+                                {question.title}
+                            </div>
+                        </Link>
                         <div className="num-answer-text">
                             {question.Answers.length} Answers
                         </div>
