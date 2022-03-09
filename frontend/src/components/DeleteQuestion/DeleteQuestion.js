@@ -25,8 +25,9 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        history.push("/");
         await dispatch(questionActions.deleteQuestion(question.id));
+        // history.push("/");
+        // await dispatch(questionActions.deleteQuestion(question.id));
     };
 
     return (

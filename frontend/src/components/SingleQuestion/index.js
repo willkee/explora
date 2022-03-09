@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneQuestion } from "../../store/questions";
 import EditQuestionModal from "../EditQuestionModal";
@@ -12,7 +12,7 @@ const SingleQuestion = () => {
     const dispatch = useDispatch();
 
     const sessionUser = useSelector((state) => state.session.user);
-    console.log("sessionUser", sessionUser.id);
+    // console.log("sessionUser", sessionUser.id);
 
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -23,6 +23,10 @@ const SingleQuestion = () => {
         };
         loaded();
     }, [dispatch, questionId]);
+
+    if (!question) {
+        return <Redirect to="/" />;
+    }
 
     return (
         isLoaded && (
