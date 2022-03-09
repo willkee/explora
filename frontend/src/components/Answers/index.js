@@ -41,9 +41,9 @@ const Answers = ({ question }) => {
 
     return (
         isLoaded && (
-            <div>
+            <div className="outer-answer-list-container">
                 <h3>Answers</h3>
-                {sessionUser && (
+                {sessionUser ? (
                     <div className="add-answer-form-container">
                         <ul
                             className={
@@ -61,14 +61,31 @@ const Answers = ({ question }) => {
                             onSubmit={handleSubmit}
                         >
                             <label htmlFor="answer">Add an Answer</label>
-                            <textarea
-                                name="answer"
-                                value={answer}
-                                onChange={(e) => setAnswer(e.target.value)}
-                            ></textarea>
-                            <button type="submit">Post</button>
+                            <div className="add-answer-sub-container">
+                                <textarea
+                                    name="answer"
+                                    value={answer}
+                                    onChange={(e) => setAnswer(e.target.value)}
+                                ></textarea>
+                                <div className="add-answer-button-container">
+                                    <button
+                                        className="add-answer-submit"
+                                        type="submit"
+                                    >
+                                        Post
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setAnswer("")}
+                                    >
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
+                ) : (
+                    <div>Please log in or sign up to post an answer.</div>
                 )}
                 <div className="all-answers-container">
                     {answers.map((answer, idx) => (

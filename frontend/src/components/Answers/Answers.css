@@ -1,0 +1,74 @@
+.outer-answer-list-container {
+    width: 100%;
+}
+
+.add-answer-form-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.add-answer-form-element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(46, 46, 46);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.add-answer-sub-container {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.add-answer-form-element label {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.add-answer-form-element textarea {
+    width: 80%;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+}
+
+.add-answer-form-element button {
+    width: 100px;
+    height: 40px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    color: rgb(219, 219, 219);
+    border: 1px solid #0d0d0d;
+    transition: opacity linear 0.25s;
+    transition: box-shadow linear 0.25s;
+}
+
+.add-answer-form-element button:hover {
+    opacity: 0.5;
+    color: rgb(255, 203, 106);
+}
+
+.add-answer-form-element button:active {
+    box-shadow: inset 0 0 10px rgb(137, 178, 255);
+}
+
+.add-answer-form-element button:first-child {
+    margin-bottom: 20px;
+    background-color: #012c52;
+}
+
+.add-answer-form-element button:last-child {
+    background-color: #0d0d0d;
+}
+
+.add-answer-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
