@@ -7,6 +7,7 @@ import SingleQuestion from "./components/SingleQuestion";
 // import SignupForm from "./components/SignupFormModal";
 // import LoginForm from "./components/LoginFormModal/LoginForm";
 import * as sessionActions from "./store/session";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
     const dispatch = useDispatch();
@@ -26,13 +27,13 @@ function App() {
                 <Navigation isLoaded={isLoaded} />
                 <Switch>
                     <Route exact path="/">
-                        <Home isLoaded={isLoaded} />
+                        <Home />
                     </Route>
                     <Route path="/api/questions/:questionId">
                         <SingleQuestion />
                     </Route>
                     <Route>
-                        <h1>Page Not Found</h1>
+                        <ErrorPage />
                     </Route>
                     {/* <Route path="/login">
                         <LoginForm />

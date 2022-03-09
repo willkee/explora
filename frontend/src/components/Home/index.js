@@ -1,14 +1,24 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./Home.css";
 import QuestionList from "../Questions";
 import AddQuestionModal from "../AddQuestionModal";
+import * as sessionActions from "../../store/session";
 
-const Home = ({ isLoaded }) => {
+const Home = () => {
     const sessionUser = useSelector((state) => state.session.user);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const restore = async () =>
+            await dispatch(sessionActions.restoreUser());
+        setIsLoaded(true);
+
+        restore();
+    }, [dispatch]);
 
     let sessionContent;
-
     if (sessionUser) {
         // Logged in
         sessionContent = <AddQuestionModal />;
@@ -22,18 +32,20 @@ const Home = ({ isLoaded }) => {
     }
 
     return (
-        <div className="outer-content-container">
-            <div
-                className={
-                    sessionUser ? "content-logged-in" : "content-logged-out"
-                }
-            >
-                {isLoaded && sessionContent}
+        isLoaded && (
+            <div className="outer-content-container">
+                <div
+                    className={
+                        sessionUser ? "content-logged-in" : "content-logged-out"
+                    }
+                >
+                    {isLoaded && sessionContent}
+                </div>
+                <div className="content-container">
+                    <QuestionList />
+                </div>
             </div>
-            <div className="content-container">
-                <QuestionList />
-            </div>
-        </div>
+        )
     );
 };
 

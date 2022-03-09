@@ -1,0 +1,26 @@
+.error-page-container {
+    position: fixed;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.error-page-container h1 {
+    text-transform: uppercase;
+}
+
+.return-home-from-error {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(49, 49, 49);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    align-self: center;
+    width: 70%;
+}
+
+.return-home-from-error:hover {
+    background-color: rgb(54, 4, 4);
+}
