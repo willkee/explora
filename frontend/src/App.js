@@ -4,8 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import SingleQuestion from "./components/SingleQuestion";
-// import SignupForm from "./components/SignupFormModal";
-// import LoginForm from "./components/LoginFormModal/LoginForm";
 import * as sessionActions from "./store/session";
 import ErrorPage from "./components/ErrorPage";
 
@@ -35,13 +33,10 @@ function App() {
                     <Route>
                         <ErrorPage />
                     </Route>
-                    {/* <Route path="/login">
-                        <LoginForm />
-                    </Route>
-                    <Route path="/signup">
-                        <SignupForm />
-                    </Route> */}
                 </Switch>
+                <div id="info-button">
+                    <i className="fa-solid fa-circle-info"></i>
+                </div>
             </div>
         )
     );

@@ -1,0 +1,70 @@
+/* MODAL CSS */
+
+.modal-delete-answer-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.modal-delete-answer-container h1 {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.delete-answer-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete-answer-button-container button {
+    width: 120px;
+    height: 40px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+    color: white;
+    transition: background-color linear 0.25s;
+    border-radius: 5px;
+}
+
+.delete-answer {
+    background-color: rgb(138, 0, 0);
+}
+.delete-answer:hover {
+    background-color: rgb(71, 0, 0);
+}
+.delete-answer-cancel {
+    background-color: rgb(88, 88, 88);
+}
+.delete-answer-cancel:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+/* DELETE BUTTON STYLING */
+
+.trash-answer-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.nav-link-delete-answer-button {
+    border: none;
+    background-color: transparent;
+}
+
+.nav-link-delete-answer-button i {
+    font-size: 20px;
+    transition: font-size linear 0.2s;
+    transition: color linear 0.4s;
+}
+.nav-link-delete-answer-button i:hover {
+    font-size: 22px;
+    color: red;
+}
+.nav-link-delete-answer-button i:active {
+    font-size: 22px;
+    color: rgb(112, 0, 0);
+}

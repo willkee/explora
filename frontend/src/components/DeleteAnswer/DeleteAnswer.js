@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import * as questionActions from "../../store/questions";
-import "./DeleteQuestion.css";
+import * as answerActions from "../../store/answers";
+import "./DeleteAnswer.css";
 
-const DeleteQuestion = ({ setShowDeleteModal, question }) => {
+const DeleteAnswer = ({ setShowDeleteModal, answer }) => {
     const dispatch = useDispatch();
     const [isLoaded, setIsLoaded] = useState(false);
     const sessionUser = useSelector((state) => state.session.user);
@@ -13,7 +13,7 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
         setIsLoaded(true);
     }, []);
 
-    if (sessionUser.id !== question.ownerId) {
+    if (sessionUser.id !== answer.userId) {
         alert(
             "Forbidden Operation: You shouldn't be here. Your IP address has been logged."
         );
@@ -22,23 +22,24 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(questionActions.deleteQuestion(question.id));
+        await dispatch(answerActions.removeAnswer(answer.id));
+        setShowDeleteModal(false);
     };
 
     return (
         isLoaded && (
-            <div className="delete-question-container">
-                <h1>Are you sure you want to delete this question?</h1>
+            <div className="modal-delete-answer-container">
+                <h1>Are you sure you want to delete this answer?</h1>
                 <form
-                    className="delete-question-form-element"
+                    className="modal-delete-answer-form-element"
                     onSubmit={handleSubmit}
                 >
-                    <div className="delete-q-button-container">
-                        <button className="delete-q" type="submit">
+                    <div className="delete-answer-button-container">
+                        <button className="delete-answer" type="submit">
                             Delete
                         </button>
                         <button
-                            className="delete-q-cancel"
+                            className="delete-answer-cancel"
                             type="button"
                             onClick={() => setShowDeleteModal(false)}
                         >
@@ -51,4 +52,4 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
     );
 };
 
-export default DeleteQuestion;
+export default DeleteAnswer;
