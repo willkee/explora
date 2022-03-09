@@ -6,9 +6,9 @@ const DeleteAnswerModal = ({ answer }) => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     return (
-        <div className="delete-answer-container">
+        <div className="trash-answer-container">
             <button
-                className="nav-link-delete-answer"
+                className="nav-link-delete-answer-button"
                 onClick={() => setShowDeleteModal(true)}
             >
                 <i className="fa-regular fa-trash-can"></i>

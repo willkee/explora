@@ -28,10 +28,10 @@ const DeleteAnswer = ({ setShowDeleteModal, answer }) => {
 
     return (
         isLoaded && (
-            <div className="delete-answer-container">
+            <div className="modal-delete-answer-container">
                 <h1>Are you sure you want to delete this answer?</h1>
                 <form
-                    className="delete-answer-form-element"
+                    className="modal-delete-answer-form-element"
                     onSubmit={handleSubmit}
                 >
                     <div className="delete-answer-button-container">

@@ -34,6 +34,9 @@ function App() {
                         <ErrorPage />
                     </Route>
                 </Switch>
+                <div id="info-button">
+                    <i className="fa-solid fa-circle-info"></i>
+                </div>
             </div>
         )
     );

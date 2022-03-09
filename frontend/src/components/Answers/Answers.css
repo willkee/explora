@@ -45,13 +45,6 @@
     margin-left: 20px;
     color: rgb(219, 219, 219);
     border: 1px solid #0d0d0d;
-    transition: opacity linear 0.25s;
-    transition: box-shadow linear 0.25s;
-}
-
-.add-answer-form-element button:hover {
-    opacity: 0.5;
-    color: rgb(255, 203, 106);
 }
 
 .add-answer-form-element button:active {
@@ -61,10 +54,22 @@
 .add-answer-form-element button:first-child {
     margin-bottom: 20px;
     background-color: #012c52;
+    transition: background-color linear 0.25s;
+    transition: box-shadow linear 0.25s;
+}
+
+.add-answer-form-element button:first-child:hover {
+    margin-bottom: 20px;
+    background-color: #034b8c;
 }
 
 .add-answer-form-element button:last-child {
     background-color: #0d0d0d;
+    transition: background-color linear 0.25s;
+    transition: box-shadow linear 0.25s;
+}
+.add-answer-form-element button:last-child:hover {
+    background-color: #4b4b4b;
 }
 
 .add-answer-button-container {
