@@ -15,6 +15,23 @@ const validateAnswer = [
     handleValidationErrors,
 ];
 
+router.get(
+    "/questions/:questionId/answers",
+    asyncHandler(async (req, res) => {
+        const questionId = parseInt(req.params.questionId, 10);
+        const answers = await Answer.findAll({
+            include: [
+                { model: User },
+                { model: Question, include: { model: User } },
+            ],
+            where: { questionId },
+            order: [["id"]],
+        });
+
+        return res.json(answers);
+    })
+);
+
 router.post(
     "/questions/:questionId/answers",
     restoreUser,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as answerActions from "../../store/answers";
 
 const Answers = ({ question }) => {
@@ -8,9 +8,19 @@ const Answers = ({ question }) => {
     const [validationErrors, setValidationErrors] = useState([]);
     const dispatch = useDispatch();
 
+    const answers = useSelector((state) => Object.values(state.answers));
+
+    const newestAnswersFirst = answers.reverse();
+
+    const questionId = question.id;
+
     useEffect(() => {
-        setIsLoaded(true);
-    }, []);
+        const loaded = async () => {
+            await dispatch(answerActions.showAnswers(questionId));
+            setIsLoaded(true);
+        };
+        loaded();
+    }, [dispatch, questionId]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,7 +64,7 @@ const Answers = ({ question }) => {
                     </form>
                 </div>
                 <div className="all-answers-container">
-                    {question.Answers.map((answer, idx) => (
+                    {newestAnswersFirst.map((answer, idx) => (
                         <div className="single-answer-container" key={idx}>
                             <div className="answer-user-info">
                                 <i className="fa-regular fa-user"></i>
