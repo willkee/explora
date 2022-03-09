@@ -39,7 +39,7 @@ const SingleQuestion = () => {
                                 .toDateString()
                                 .slice(4)}
                         </div>
-                        {sessionUser.id === question.ownerId && (
+                        {sessionUser && sessionUser.id === question.ownerId && (
                             <div className="question-edit-delete">
                                 <EditQuestionModal question={question} />
                                 <DeleteQuestionModal question={question} />

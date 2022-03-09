@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteAnswerModal from "../DeleteAnswer";
 import * as answerActions from "../../store/answers";
+import "./Answers.css";
 
 const Answers = ({ question }) => {
     const [answer, setAnswer] = useState("");
@@ -42,31 +43,33 @@ const Answers = ({ question }) => {
         isLoaded && (
             <div>
                 <h3>Answers</h3>
-                <div className="add-answer-form-container">
-                    <ul
-                        className={
-                            validationErrors.length > 0
-                                ? "errors-container"
-                                : "no-errors"
-                        }
-                    >
-                        {validationErrors.map((error, idx) => (
-                            <li key={idx}>{error}</li>
-                        ))}
-                    </ul>
-                    <form
-                        className="add-answer-form-element"
-                        onSubmit={handleSubmit}
-                    >
-                        <label htmlFor="answer">Add an Answer</label>
-                        <textarea
-                            name="answer"
-                            value={answer}
-                            onChange={(e) => setAnswer(e.target.value)}
-                        ></textarea>
-                        <button type="submit">Post</button>
-                    </form>
-                </div>
+                {sessionUser && (
+                    <div className="add-answer-form-container">
+                        <ul
+                            className={
+                                validationErrors.length > 0
+                                    ? "errors-container"
+                                    : "no-errors"
+                            }
+                        >
+                            {validationErrors.map((error, idx) => (
+                                <li key={idx}>{error}</li>
+                            ))}
+                        </ul>
+                        <form
+                            className="add-answer-form-element"
+                            onSubmit={handleSubmit}
+                        >
+                            <label htmlFor="answer">Add an Answer</label>
+                            <textarea
+                                name="answer"
+                                value={answer}
+                                onChange={(e) => setAnswer(e.target.value)}
+                            ></textarea>
+                            <button type="submit">Post</button>
+                        </form>
+                    </div>
+                )}
                 <div className="all-answers-container">
                     {answers.map((answer, idx) => (
                         <div className="single-answer-container" key={idx}>
@@ -84,9 +87,10 @@ const Answers = ({ question }) => {
                                 </div>
                             </div>
                             <div className="answer-text">{answer.answer}</div>
-                            {sessionUser.id === answer.userId && (
-                                <DeleteAnswerModal answer={answer} />
-                            )}
+                            {sessionUser &&
+                                sessionUser.id === answer.userId && (
+                                    <DeleteAnswerModal answer={answer} />
+                                )}
                         </div>
                     ))}
                 </div>
