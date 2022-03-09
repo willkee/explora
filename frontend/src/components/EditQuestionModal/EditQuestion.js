@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as questionActions from "../../store/questions";
+import "./EditQuestion.css";
 
 const EditQuestion = ({ setShowQuestionModal, question }) => {
     const dispatch = useDispatch();
@@ -61,19 +62,21 @@ const EditQuestion = ({ setShowQuestionModal, question }) => {
                     className="edit-question-form-element"
                     onSubmit={handleSubmit}
                 >
-                    <label htmlFor="title">Title</label>
-                    <input
-                        type="text"
-                        name="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    ></input>
-                    <label htmlFor="description">Description</label>
-                    <textarea
-                        name="description"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                    ></textarea>
+                    <div className="edit-q-inputs">
+                        <label htmlFor="title">Title</label>
+                        <input
+                            type="text"
+                            name="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        ></input>
+                        <label htmlFor="description">Description</label>
+                        <textarea
+                            name="description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                        ></textarea>
+                    </div>
                     <div className="edit-q-button-container">
                         <button className="edit-q-submit" type="submit">
                             Edit

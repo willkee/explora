@@ -1,0 +1,9 @@
+.edit-question-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-q-inputs {
+    display: flex;
+    flex-direction: column;
+}

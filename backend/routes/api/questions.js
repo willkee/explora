@@ -23,7 +23,7 @@ router.get(
         const questions = await Question.findAll({
             include: [{ model: Answer }, { model: User }],
             limit: 40,
-            order: [["title", "ASC"]],
+            order: [["title", "DESC"]],
         });
         return res.json({ questions });
     })
@@ -69,6 +69,7 @@ router.get(
 
 router.put(
     "/:questionId",
+    validateQuestion,
     asyncHandler(async (req, res) => {
         const questionId = parseInt(req.params.questionId, 10);
 
