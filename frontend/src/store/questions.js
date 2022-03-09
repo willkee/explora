@@ -4,7 +4,7 @@ const VIEW_QUESTIONS = "questions/VIEW_QUESTIONS";
 const VIEW_ONE_QUESTION = "questions/VIEW_ONE_QUESTION";
 const ADD_QUESTION = "questions/ADD_QUESTION";
 const EDIT_QUESTION = "questions/EDIT_QUESTION";
-// const DELETE_QUESTION = "questions/DELETE_QUESTION";
+const DELETE_QUESTION = "questions/DELETE_QUESTION";
 
 export const addQuestion = (post) => ({
     type: ADD_QUESTION,
@@ -24,6 +24,11 @@ export const viewQuestion = (item) => ({
 export const questionEdit = (edit) => ({
     type: EDIT_QUESTION,
     edit,
+});
+
+export const questionToDelete = (idToDelete) => ({
+    type: DELETE_QUESTION,
+    idToDelete,
 });
 
 export const createQuestion = (data) => async (dispatch) => {
@@ -68,6 +73,18 @@ export const editQuestion = (id, data) => async (dispatch) => {
     return resJSON;
 };
 
+export const deleteQuestion = (id) => async (dispatch) => {
+    const res = await csrfFetch(`/api/questions/${id}`, {
+        method: "DELETE",
+    });
+
+    if (res.ok) {
+        const { id } = await res.json();
+        dispatch(questionToDelete(id));
+        return id;
+    }
+};
+
 const questionReducer = (state = {}, action) => {
     let newState;
     switch (action.type) {
@@ -95,6 +112,11 @@ const questionReducer = (state = {}, action) => {
                 ...state,
                 [action.edit.id]: { ...action.edit },
             };
+            return newState;
+        }
+        case DELETE_QUESTION: {
+            newState = { ...state };
+            delete newState[action.idToDelete];
             return newState;
         }
         default:

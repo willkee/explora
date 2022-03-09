@@ -11,7 +11,7 @@ const EditQuestionModal = ({ question }) => {
                 className="nav-link-edit-question"
                 onClick={() => setShowQuestionModal(true)}
             >
-                <i className="fa-regular fa-square-plus"></i>
+                <i className="fa-regular fa-pen-to-square"></i>
             </button>
             {showQuestionModal && (
                 <Modal onClose={() => setShowQuestionModal(false)}>

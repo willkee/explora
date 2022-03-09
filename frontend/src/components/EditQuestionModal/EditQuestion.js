@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import * as questionActions from "../../store/questions";
 
 const EditQuestion = ({ setShowQuestionModal, question }) => {
     const dispatch = useDispatch();
+
+    const sessionUser = useSelector((state) => state.session.user);
 
     const [title, setTitle] = useState(question.title);
     const [description, setDescription] = useState(question.description);
@@ -13,6 +16,13 @@ const EditQuestion = ({ setShowQuestionModal, question }) => {
     useEffect(() => {
         setIsLoaded(true);
     }, []);
+
+    if (sessionUser.id !== question.ownerId) {
+        alert(
+            "Forbidden Operation: You shouldn't be here. Your IP address has been logged."
+        );
+        return <Redirect to="/" />;
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();

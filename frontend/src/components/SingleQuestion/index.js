@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneQuestion } from "../../store/questions";
 import EditQuestionModal from "../EditQuestionModal";
+import DeleteQuestionModal from "../DeleteQuestion";
 import "./SingleQuestion.css";
 
 const SingleQuestion = () => {
     const { questionId } = useParams();
     const question = useSelector((state) => state.questions[questionId]);
     const dispatch = useDispatch();
+
+    const sessionUser = useSelector((state) => state.session.user);
+    console.log("sessionUser", sessionUser.id);
 
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -23,19 +27,42 @@ const SingleQuestion = () => {
     return (
         isLoaded && (
             <div className="single-question-container">
-                <h1>{question.title}</h1>
-                <div>{question.User.username}</div>
-                <div>
-                    {new Date(question.createdAt).toDateString().slice(4)}
+                <div className="single-question-all">
+                    <h1>{question.title}</h1>
+                    <div className="q-subheader-container">
+                        <div className="q-author">{question.User.username}</div>
+                        <div className="q-date">
+                            {new Date(question.createdAt)
+                                .toDateString()
+                                .slice(4)}
+                        </div>
+                        {sessionUser.id === question.ownerId && (
+                            <div className="question-edit-delete">
+                                <EditQuestionModal question={question} />
+                                <DeleteQuestionModal question={question} />
+                            </div>
+                        )}
+                    </div>
+                    <div>{question.description}</div>
                 </div>
-                <EditQuestionModal question={question} />
-                <div>{question.description}</div>
                 <h3>Answers</h3>
                 <div className="all-answers-container">
                     {question.Answers.map((answer, idx) => (
                         <div className="single-answer-container" key={idx}>
-                            <div>{answer.User.username}</div>
-                            <div>Answer: {answer.answer}</div>
+                            <div className="answer-user-info">
+                                <i className="fa-regular fa-user"></i>
+                                <div className="a-user-info-text">
+                                    <div className="a-user-username">
+                                        {answer.User.username}
+                                    </div>
+                                    <div>
+                                        {new Date(answer.createdAt)
+                                            .toDateString()
+                                            .slice(4)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="answer-text">{answer.answer}</div>
                         </div>
                     ))}
                 </div>
