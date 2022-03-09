@@ -2,10 +2,12 @@ const router = require("express").Router();
 const sessionRouter = require("./session");
 const usersRouter = require("./users");
 const questionsRouter = require("./questions");
+const answersRouter = require("./answers");
 
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
 router.use("/questions", questionsRouter);
+router.use(answersRouter);
 
 // const asyncHandler = require("express-async-handler");
 // const { setTokenCookie } = require("../../utils/auth.js");

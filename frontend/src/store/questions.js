@@ -107,7 +107,6 @@ const questionReducer = (state = {}, action) => {
             return newState;
         }
         case EDIT_QUESTION: {
-            console.log("!!!#@#!#!#!@#@#", action);
             newState = {
                 ...state,
                 [action.edit.id]: { ...action.edit },

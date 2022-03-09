@@ -125,7 +125,7 @@ router.delete(
             }
 
             await Question.destroy({ where: { id } });
-            console.log(res.json({ id: question.id }));
+            // console.log(res.json({ id: question.id }));
 
             return res.json({ id });
         } else {
