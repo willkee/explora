@@ -94,7 +94,7 @@ const Answers = ({ question }) => {
                     {answers.map((answer, idx) => (
                         <div
                             className={
-                                sessionUser.id === answer.userId
+                                sessionUser && sessionUser.id === answer.userId
                                     ? "single-answer-container answer-owner"
                                     : "single-answer-container"
                             }
