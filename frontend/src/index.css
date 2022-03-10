@@ -6,6 +6,7 @@
 
 body {
     background-image: url("../public/images/travelbackground.jpg");
+    opacity: 0.92;
 }
 
 .super-container {
