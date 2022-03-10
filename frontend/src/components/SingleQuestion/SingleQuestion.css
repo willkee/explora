@@ -32,8 +32,13 @@
     background-color: white;
     padding: 20px 10px;
     border-radius: 5px;
+}
+
+.single-answer-container.answer-owner {
+    background-color: rgb(228, 245, 255);
     box-shadow: 3px 3px 5px rgb(51, 51, 51);
 }
+
 .answer-user-info {
     display: flex;
     align-items: center;

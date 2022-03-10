@@ -92,7 +92,14 @@ const Answers = ({ question }) => {
                 )}
                 <div className="all-answers-container">
                     {answers.map((answer, idx) => (
-                        <div className="single-answer-container" key={idx}>
+                        <div
+                            className={
+                                sessionUser.id === answer.userId
+                                    ? "single-answer-container answer-owner"
+                                    : "single-answer-container"
+                            }
+                            key={idx}
+                        >
                             <div className="answer-user-info">
                                 <i className="fa-regular fa-user"></i>
                                 <div className="a-user-info-text">
