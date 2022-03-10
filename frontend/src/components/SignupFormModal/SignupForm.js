@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 import "./SignUpForm.css";
 
-const SignupForm = () => {
+const SignupForm = ({ setShowSignupModal }) => {
     const dispatch = useDispatch();
     // const sessionUser = useSelector((state) => state.session.user);
     const [username, setUsername] = useState("");
@@ -105,7 +105,15 @@ const SignupForm = () => {
                         autoComplete="off"
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     ></input>
-                    <button>Sign Up</button>
+                    <div className="sign-up-button-container">
+                        <button>Sign Up</button>
+                        <button
+                            type="button"
+                            onClick={() => setShowSignupModal(false)}
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </form>
             </div>
         )

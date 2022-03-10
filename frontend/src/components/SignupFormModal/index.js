@@ -16,7 +16,10 @@ const SignupFormModal = ({ isLoaded }) => {
             </button>
             {showSignupModal && (
                 <Modal onClose={() => setShowSignupModal(false)}>
-                    <SignupForm isLoaded={isLoaded} />
+                    <SignupForm
+                        isLoaded={isLoaded}
+                        setShowSignupModal={setShowSignupModal}
+                    />
                 </Modal>
             )}
         </div>
