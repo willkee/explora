@@ -6,8 +6,6 @@ import "./Questions.css";
 
 const QuestionList = () => {
     const [isLoaded, setIsLoaded] = useState(false);
-    // const [reverseArray, setReverseArray] = useState([])
-
     const sessionUser = useSelector((state) => state.session.user);
 
     const dispatch = useDispatch();
@@ -17,30 +15,19 @@ const QuestionList = () => {
     });
 
     useEffect(() => {
-        const tester = async () => {
+        const loader = async () => {
             await dispatch(getQuestions());
             setIsLoaded(true);
         };
 
-        tester();
+        loader();
     }, [dispatch]);
-
-    // useEffect(() => {
-    //     const tester = async () => {
-    //         await dispatch(getQuestions());
-    //         setIsLoaded(true);
-    //         setReverseArray(questions.reverse().slice(0, 20));
-    //     };
-
-    //     tester();
-    // }, [dispatch, questions]);
 
     const questionsReversed = questions.reverse().slice(0, 20);
 
     return (
         isLoaded && (
             <div className="question-container">
-                {/* reverseArray.map */}
                 {questionsReversed.map((question, idx) => (
                     <div key={idx} className="question-box">
                         <div className="question-profile">

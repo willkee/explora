@@ -42,8 +42,7 @@ const Answers = ({ question }) => {
     return (
         isLoaded && (
             <div className="outer-answer-list-container">
-                <h3>Answers</h3>
-                {sessionUser ? (
+                {sessionUser && question.ownerId !== sessionUser.id && (
                     <div className="add-answer-form-container">
                         <ul
                             className={
@@ -61,31 +60,35 @@ const Answers = ({ question }) => {
                             onSubmit={handleSubmit}
                         >
                             <label htmlFor="answer">Add an Answer</label>
-                            <div className="add-answer-sub-container">
-                                <textarea
-                                    name="answer"
-                                    value={answer}
-                                    onChange={(e) => setAnswer(e.target.value)}
-                                ></textarea>
-                                <div className="add-answer-button-container">
-                                    <button
-                                        className="add-answer-submit"
-                                        type="submit"
-                                    >
-                                        Post
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => setAnswer("")}
-                                    >
+                            <textarea
+                                name="answer"
+                                value={answer}
+                                onChange={(e) => setAnswer(e.target.value)}
+                            ></textarea>
+                            <div className="add-answer-button-container">
+                                <button
+                                    className="add-answer-submit"
+                                    type="submit"
+                                >
+                                    <span className="full-text-post">Post</span>
+                                    <span className="narrow-icon-button">
+                                        <i className="fa-solid fa-paper-plane"></i>
+                                    </span>
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setAnswer("")}
+                                >
+                                    <span className="full-text-post">
                                         Clear
-                                    </button>
-                                </div>
+                                    </span>
+                                    <span className="narrow-icon-button">
+                                        <i className="fa-solid fa-eraser"></i>
+                                    </span>
+                                </button>
                             </div>
                         </form>
                     </div>
-                ) : (
-                    <div>Please log in or sign up to post an answer.</div>
                 )}
                 <div className="all-answers-container">
                     {answers.map((answer, idx) => (

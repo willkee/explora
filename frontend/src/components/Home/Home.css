@@ -10,6 +10,10 @@
     flex-direction: column;
 }
 
+.outer-content-container.content-container-logged-in {
+    background-color: #034b86;
+}
+
 .content-logged-out {
     width: 100%;
     color: rgb(192, 192, 192);

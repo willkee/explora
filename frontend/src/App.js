@@ -36,6 +36,11 @@ function App() {
                     </Route>
                 </Switch>
                 <InfoButton />
+                <img
+                    className="meme-cat"
+                    src="/images/squeezed-cat.jpeg"
+                    alt="funny-cat"
+                />
             </div>
         )
     );
