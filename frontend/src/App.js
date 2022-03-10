@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import SingleQuestion from "./components/SingleQuestion";
 import * as sessionActions from "./store/session";
 import ErrorPage from "./components/ErrorPage";
+import InfoButton from "./components/InfoButton";
 
 function App() {
     const dispatch = useDispatch();
@@ -34,9 +35,7 @@ function App() {
                         <ErrorPage />
                     </Route>
                 </Switch>
-                <div id="info-button">
-                    <i className="fa-solid fa-circle-info"></i>
-                </div>
+                <InfoButton />
             </div>
         )
     );

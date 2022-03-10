@@ -8,22 +8,3 @@
     display: flex;
     justify-content: center;
 }
-
-#info-button {
-    display: flex;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-#info-button i {
-    font-size: 30px;
-    color: #0d0d0d;
-}
-#info-button i:hover {
-    font-size: 33px;
-    color: #4b4b4b;
-}
-#info-button i:active {
-    font-size: 33px;
-    color: #012c52;
-}
