@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url("../public/images/travelbackground.jpg");
+}
+
 .super-container {
     display: flex;
     justify-content: center;
