@@ -9,8 +9,12 @@
 .question-box {
     background-color: rgb(206, 206, 206);
     width: 100%;
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 20px;
+}
+
+.question-box:first-child {
+    margin-top: 20px;
 }
 
 .fa-solid.fa-user.question:hover {

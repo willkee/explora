@@ -33,7 +33,13 @@ const Home = () => {
 
     return (
         isLoaded && (
-            <div className="outer-content-container">
+            <div
+                className={
+                    sessionUser
+                        ? "outer-content-container content-container-logged-in"
+                        : "outer-content-container"
+                }
+            >
                 <div
                     className={
                         sessionUser ? "content-logged-in" : "content-logged-out"

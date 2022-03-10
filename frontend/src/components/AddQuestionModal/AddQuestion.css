@@ -16,7 +16,7 @@
 
 .nav-link-add-question span,
 .nav-link-add-question i {
-    color: rgb(0, 102, 255);
+    color: rgb(158, 158, 158);
 }
 
 .nav-link-add-question span {
@@ -29,10 +29,11 @@
 }
 
 .nav-link-add-question:hover {
-    background-color: black;
+    background-color: #0d0d0d;
+    box-shadow: inset 0 0 5px green;
 }
 .nav-link-add-question:active {
-    background-color: rgb(216, 170, 21);
+    background-color: rgb(14, 88, 24);
 }
 
 .add-question-container {

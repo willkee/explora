@@ -4,14 +4,16 @@
     top: 200px;
     flex-direction: column;
     width: 80%;
+    background-color: #c4c4c4;
+    padding: 20px;
+    border: 35px solid #034b8c;
 }
 
 .single-question-all {
-    background-color: grey;
+    /* background-color: grey; */
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgb(51, 51, 51);
 }
 
 .single-question-container h3 {
@@ -27,7 +29,7 @@
 .single-answer-container {
     margin-bottom: 30px;
     font-size: 14px;
-    background-color: rgb(213, 233, 255);
+    background-color: white;
     padding: 20px 10px;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgb(51, 51, 51);

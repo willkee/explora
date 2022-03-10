@@ -31,7 +31,6 @@ const SingleQuestion = () => {
         isLoaded && (
             <div className="single-question-container">
                 <div className="single-question-all">
-                    <h1>{question.title}</h1>
                     <div className="q-subheader-container">
                         <div className="q-author">{question.User.username}</div>
                         <div className="q-date">
@@ -46,6 +45,7 @@ const SingleQuestion = () => {
                             </div>
                         )}
                     </div>
+                    <h1>{question.title}</h1>
                     <div>{question.description}</div>
                 </div>
                 <Answers question={question} />
