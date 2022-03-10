@@ -29,7 +29,13 @@ const SingleQuestion = () => {
 
     return (
         isLoaded && (
-            <div className="single-question-container">
+            <div
+                className={
+                    sessionUser
+                        ? "single-question-container"
+                        : "single-question-container logged-out-sqc"
+                }
+            >
                 <div className="single-question-all">
                     <div className="q-subheader-container">
                         <div className="single-q-profile">

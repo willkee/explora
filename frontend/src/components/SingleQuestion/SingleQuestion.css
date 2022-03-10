@@ -8,9 +8,11 @@
     padding: 20px;
     border: 35px solid #034b8c;
 }
+.single-question-container.logged-out-sqc {
+    border: 35px solid #4b4b4b;
+}
 
 .single-question-all {
-    /* background-color: grey; */
     padding: 20px;
     padding-bottom: 50px;
     border-radius: 10px;
