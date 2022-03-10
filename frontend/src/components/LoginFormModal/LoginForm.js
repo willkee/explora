@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
     const [credential, setCredential] = useState("");
     const [password, setPassword] = useState("");
@@ -29,18 +29,18 @@ const LoginForm = () => {
     return (
         <div className="login-form-container">
             <h1>Login</h1>
+            <ul
+                className={
+                    validationErrors.length > 0
+                        ? "errors-container"
+                        : "hidden-error-container"
+                }
+            >
+                {validationErrors.map((error) => (
+                    <li key={error}>{error}</li>
+                ))}
+            </ul>
             <form className="login-form" onSubmit={handleSubmit}>
-                <ul
-                    className={
-                        validationErrors.length > 0
-                            ? "errors-container"
-                            : "hidden-error-container"
-                    }
-                >
-                    {validationErrors.map((error) => (
-                        <li key={error}>{error}</li>
-                    ))}
-                </ul>
                 <label htmlFor="credential" className="form-label">
                     Username / Email
                 </label>
@@ -62,7 +62,12 @@ const LoginForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 ></input>
-                <button>Log In</button>
+                <div className="log-in-form-button-container">
+                    <button>Log In</button>
+                    <button type="button" onClick={() => setShowModal(false)}>
+                        Cancel
+                    </button>
+                </div>
             </form>
         </div>
     );
