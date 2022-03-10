@@ -45,6 +45,11 @@
     cursor: auto;
     color: rgb(59, 59, 59);
 }
+.fa-solid.fa-user.question:hover {
+    cursor: auto;
+    color: rgb(59, 59, 59);
+    font-size: 30px;
+}
 
 .question-username {
     font-size: 16px;
