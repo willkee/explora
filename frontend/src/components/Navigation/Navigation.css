@@ -108,9 +108,11 @@
     font-size: 30px;
     cursor: pointer;
     color: rgb(175, 175, 175);
+    transition: all linear 0.3s;
 }
 
 .fa-solid.fa-user:hover {
     color: #be9c29;
+    font-size: 35px;
     cursor: pointer;
 }

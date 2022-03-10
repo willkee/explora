@@ -29,41 +29,52 @@ const QuestionList = () => {
         isLoaded && (
             <div className="question-container">
                 {questionsReversed.map((question, idx) => (
-                    <div key={idx} className="question-box">
-                        <div className="question-profile">
-                            <i className="fa-solid fa-user question"></i>
-                            <div className="profile-desc">
-                                <div
-                                    className={
-                                        sessionUser
-                                            ? sessionUser.username ===
-                                              question.User.username
-                                                ? "question-username-owner"
+                    <Link
+                        className="link-to-single-question"
+                        to={`/api/questions/${question.id}`}
+                    >
+                        <div
+                            key={idx}
+                            className={
+                                sessionUser
+                                    ? sessionUser.id === question.ownerId
+                                        ? "question-box question-owner-main"
+                                        : "question-box"
+                                    : "question-box"
+                            }
+                        >
+                            <div className="question-profile">
+                                <i className="fa-solid fa-user question"></i>
+                                <div className="profile-desc">
+                                    <div
+                                        className={
+                                            sessionUser
+                                                ? sessionUser.username ===
+                                                  question.User.username
+                                                    ? "question-username-owner"
+                                                    : "question-username"
                                                 : "question-username"
-                                            : "question-username"
-                                    }
-                                >
-                                    {question.User.username}
-                                </div>
-                                <div className="question-date">
-                                    {new Date(question.createdAt)
-                                        .toDateString()
-                                        .slice(4)}
+                                        }
+                                    >
+                                        {question.User.username}
+                                    </div>
+                                    <div className="question-date">
+                                        {new Date(question.createdAt)
+                                            .toDateString()
+                                            .slice(4)}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <Link
-                            className="link-to-single-question"
-                            to={`/api/questions/${question.id}`}
-                        >
+
                             <div className="question-title">
                                 {question.title}
                             </div>
-                        </Link>
-                        <div className="num-answer-text">
-                            {question.Answers.length} Answers
+
+                            <div className="num-answer-text">
+                                {question.Answers.length} Answers
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         )
