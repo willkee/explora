@@ -27,6 +27,7 @@
     color: white;
     transition: background-color linear 0.25s;
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .delete-answer {

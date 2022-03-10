@@ -32,18 +32,34 @@ const SingleQuestion = () => {
             <div className="single-question-container">
                 <div className="single-question-all">
                     <div className="q-subheader-container">
-                        <div className="q-author">{question.User.username}</div>
-                        <div className="q-date">
-                            {new Date(question.createdAt)
-                                .toDateString()
-                                .slice(4)}
-                        </div>
-                        {sessionUser && sessionUser.id === question.ownerId && (
-                            <div className="question-edit-delete">
-                                <EditQuestionModal question={question} />
-                                <DeleteQuestionModal question={question} />
+                        <div className="single-q-profile">
+                            <div>
+                                <i class="fa-solid fa-user q-icon"></i>
                             </div>
-                        )}
+                            <div>
+                                <div className="q-author">
+                                    {question.User.username}
+                                </div>
+                                <div className="q-date">
+                                    {new Date(question.createdAt)
+                                        .toDateString()
+                                        .slice(4)}
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            {sessionUser &&
+                                sessionUser.id === question.ownerId && (
+                                    <div className="question-edit-delete">
+                                        <EditQuestionModal
+                                            question={question}
+                                        />
+                                        <DeleteQuestionModal
+                                            question={question}
+                                        />
+                                    </div>
+                                )}
+                        </div>
                     </div>
                     <h1>{question.title}</h1>
                     <div>{question.description}</div>

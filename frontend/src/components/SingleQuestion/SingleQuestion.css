@@ -105,8 +105,20 @@
 
 .q-subheader-container {
     margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-q-profile {
+    display: flex;
+    align-items: center;
 }
 
 .answer-text {
     font-size: 14px;
+}
+
+.fa-solid.fa-user.q-icon {
+    color: #0d0d0d;
+    margin-right: 10px;
 }

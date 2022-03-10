@@ -8,3 +8,16 @@
     display: flex;
     justify-content: center;
 }
+
+.meme-cat {
+    position: fixed;
+    top: 0;
+    display: none;
+    z-index: 99999;
+}
+
+@media screen and (max-width: 200px) {
+    .meme-cat {
+        display: block;
+    }
+}
