@@ -71,7 +71,9 @@ const QuestionList = () => {
                             </div>
 
                             <div className="num-answer-text">
-                                {question.Answers.length} Answers
+                                {question.Answers.length === 1
+                                    ? `${question.Answers.length} Answer`
+                                    : `${question.Answers.length} Answers`}
                             </div>
                         </div>
                     </Link>
