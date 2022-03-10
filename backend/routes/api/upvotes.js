@@ -39,15 +39,15 @@ router.post(
 router.delete(
     "/upvotes/:upvoteId",
     asyncHandler(async (req, res) => {
-        const upvoteId = parseInt(req.params.answerId, 10);
-        const answer = await Answer.findByPk(answerId);
+        const upvoteId = parseInt(req.params.upvoteId, 10);
+        const upvote = await Upvote.findByPk(upvoteId);
 
-        if (answer) {
-            const id = answer.id;
-            await Answer.destroy({ where: { id } });
+        if (upvote) {
+            const id = upvote.id;
+            await Upvote.destroy({ where: { id } });
             return res.json({ id });
         } else {
-            throw new Error("Answer cannot be found.");
+            throw new Error("Upvote cannot be found.");
         }
     })
 );
