@@ -94,7 +94,7 @@ router.put(
                 return res.json(question);
             }
         } catch (err) {
-            console.log("Error - Question Not Found: ", err);
+            console.error("Error - Question Not Found: ", err);
         }
     })
 );
@@ -125,7 +125,6 @@ router.delete(
             }
 
             await Question.destroy({ where: { id } });
-            // console.log(res.json({ id: question.id }));
 
             return res.json({ id });
         } else {

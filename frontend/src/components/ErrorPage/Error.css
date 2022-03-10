@@ -1,12 +1,26 @@
 .error-page-container {
     position: fixed;
-    top: 200px;
+    top: 150px;
+    bottom: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.678);
 }
 .error-page-container h1 {
     text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    border: none;
+}
+
+.error-page-container img {
+    width: 30%;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 10px white;
 }
 
 .return-home-from-error {
@@ -18,9 +32,10 @@
     border-radius: 10px;
     text-align: center;
     align-self: center;
-    width: 70%;
+    width: 30%;
+    text-transform: uppercase;
 }
 
 .return-home-from-error:hover {
-    background-color: rgb(54, 4, 4);
+    background-color: rgb(21, 42, 100);
 }
