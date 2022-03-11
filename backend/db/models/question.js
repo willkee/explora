@@ -28,6 +28,8 @@ module.exports = (sequelize, DataTypes) => {
         Question.belongsTo(models.User, { foreignKey: "ownerId" });
         Question.hasMany(models.Answer, {
             foreignKey: "questionId",
+            onDelete: "CASCADE",
+            hooks: true,
         });
     };
     return Question;

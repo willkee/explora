@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         Answer.belongsTo(models.User, { foreignKey: "userId" });
         Answer.hasMany(models.Upvote, {
             foreignKey: "answerId",
-            onDelete: "cascade",
+            onDelete: "CASCADE",
             hooks: true,
         });
     };

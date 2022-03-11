@@ -22,7 +22,11 @@ module.exports = (sequelize, DataTypes) => {
     );
     Upvote.associate = function (models) {
         Upvote.belongsTo(models.User, { foreignKey: "userId" });
-        Upvote.belongsTo(models.Answer, { foreignKey: "answerId" });
+        Upvote.belongsTo(models.Answer, {
+            foreignKey: "answerId",
+            onDelete: "CASCADE",
+            hooks: true,
+        });
     };
     return Upvote;
 };
