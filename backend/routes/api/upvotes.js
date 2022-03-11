@@ -2,7 +2,7 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { restoreUser } = require("../../utils/auth");
 
-const { Upvote, Answer, User } = require("../../db/models");
+const { Upvote } = require("../../db/models");
 
 const router = express.Router();
 

@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const { restoreUser } = require("../../utils/auth");
 
-const { Question, Answer, User } = require("../../db/models");
+const { Question, Answer, User, Upvote } = require("../../db/models");
 
 const router = express.Router();
 
@@ -65,8 +65,25 @@ router.delete(
         const answerId = parseInt(req.params.answerId, 10);
         const answer = await Answer.findByPk(answerId);
 
+        const isEmpty = (obj) => Object.keys(obj).length === 0;
+
         if (answer) {
             const id = answer.id;
+
+            const relatedUpvotes = await Upvote.findAll({
+                where: {
+                    answerId: id,
+                },
+            });
+
+            if (!isEmpty(relatedUpvotes)) {
+                await Upvote.destroy({
+                    where: {
+                        answerId: id,
+                    },
+                });
+            }
+
             await Answer.destroy({ where: { id } });
             return res.json({ id });
         } else {
