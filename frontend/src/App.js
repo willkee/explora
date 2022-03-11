@@ -28,7 +28,7 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/api/questions/:questionId">
+                    <Route path="/questions/:questionId">
                         <SingleQuestion />
                     </Route>
                     <Route>

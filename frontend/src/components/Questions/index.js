@@ -32,7 +32,7 @@ const QuestionList = () => {
                     <Link
                         key={idx}
                         className="link-to-single-question"
-                        to={`/api/questions/${question.id}`}
+                        to={`/questions/${question.id}`}
                     >
                         <div
                             className={
