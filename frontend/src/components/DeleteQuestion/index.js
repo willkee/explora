@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import DeleteQuestion from "./DeleteQuestion";
 
-const DeleteQuestionModal = ({ question }) => {
+const DeleteQuestionModal = ({ question, setDidDelete }) => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     return (
@@ -18,6 +18,7 @@ const DeleteQuestionModal = ({ question }) => {
                     <DeleteQuestion
                         question={question}
                         setShowDeleteModal={setShowDeleteModal}
+                        setDidDelete={setDidDelete}
                     />
                 </Modal>
             )}
