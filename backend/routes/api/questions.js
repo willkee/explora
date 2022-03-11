@@ -111,21 +111,16 @@ router.delete(
             const id = question.id;
 
             const relatedAnswers = await Answer.findAll({
-                where: {
-                    questionId: id,
-                },
+                where: { questionId: id },
             });
 
             if (!isEmpty(relatedAnswers)) {
                 await Answer.destroy({
-                    where: {
-                        questionId: id,
-                    },
+                    where: { questionId: id },
                 });
             }
 
             await Question.destroy({ where: { id } });
-
             return res.json({ id });
         } else {
             throw new Error("Question cannot be found.");

@@ -3,11 +3,13 @@ const sessionRouter = require("./session");
 const usersRouter = require("./users");
 const questionsRouter = require("./questions");
 const answersRouter = require("./answers");
+const upvotesRouter = require("./upvotes");
 
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
 router.use("/questions", questionsRouter);
 router.use(answersRouter);
+router.use(upvotesRouter);
 
 // const asyncHandler = require("express-async-handler");
 // const { setTokenCookie } = require("../../utils/auth.js");

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteAnswerModal from "../DeleteAnswer";
+import Upvotes from "./Upvotes";
 import * as answerActions from "../../store/answers";
 import "./Answers.css";
 
@@ -103,19 +104,24 @@ const Answers = ({ question }) => {
                             key={idx}
                         >
                             <div className="answer-user-info">
-                                <i className="fa-regular fa-user"></i>
-                                <div className="a-user-info-text">
-                                    <div className="a-user-username">
-                                        {answer.User.username}
-                                    </div>
-                                    <div>
-                                        {new Date(answer.createdAt)
-                                            .toDateString()
-                                            .slice(4)}
+                                <div className="sub-answer-user-info">
+                                    <i className="fa-regular fa-user"></i>
+                                    <div className="a-user-info-text">
+                                        <div className="a-user-username">
+                                            {answer.User.username}
+                                        </div>
+                                        <div>
+                                            {new Date(answer.createdAt)
+                                                .toDateString()
+                                                .slice(4)}
+                                        </div>
                                     </div>
                                 </div>
+
+                                <Upvotes answer={answer} />
                             </div>
                             <div className="answer-text">{answer.answer}</div>
+
                             {sessionUser &&
                                 sessionUser.id === answer.userId && (
                                     <DeleteAnswerModal answer={answer} />

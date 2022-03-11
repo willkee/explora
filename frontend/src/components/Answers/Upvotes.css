@@ -1,0 +1,31 @@
+.vote-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.vote-count {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.vote-button-element {
+    background-color: transparent;
+    border: none;
+}
+
+.fa-regular.fa-square-caret-up.vote-button,
+.fa-solid.fa-square-caret-up.vote-button {
+    font-size: 30px;
+}
+
+.fa-solid.fa-square-caret-up.vote-button.voted {
+    color: #034b8c;
+}
+
+.fa-regular.fa-square-caret-up.vote-button.not-voted {
+    color: black;
+}
+.fa-regular.fa-square-caret-up.vote-button.disabled-vote {
+    color: rgb(221, 221, 221);
+}

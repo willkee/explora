@@ -67,6 +67,7 @@ router.delete(
 
         if (answer) {
             const id = answer.id;
+
             await Answer.destroy({ where: { id } });
             return res.json({ id });
         } else {

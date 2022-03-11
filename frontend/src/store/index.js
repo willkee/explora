@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import questionReducer from "./questions";
 import answerReducer from "./answers";
+import upvoteReducer from "./upvotes";
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     questions: questionReducer,
     answers: answerReducer,
+    upvotes: upvoteReducer,
 });
 
 let enhancer;

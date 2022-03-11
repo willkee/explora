@@ -40,7 +40,7 @@ const SingleQuestion = () => {
                     <div className="q-subheader-container">
                         <div className="single-q-profile">
                             <div>
-                                <i class="fa-solid fa-user q-icon"></i>
+                                <i className="fa-solid fa-user q-icon"></i>
                             </div>
                             <div>
                                 <div className="q-author">

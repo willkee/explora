@@ -30,11 +30,11 @@ const QuestionList = () => {
             <div className="question-container">
                 {questionsReversed.map((question, idx) => (
                     <Link
+                        key={idx}
                         className="link-to-single-question"
                         to={`/api/questions/${question.id}`}
                     >
                         <div
-                            key={idx}
                             className={
                                 sessionUser
                                     ? sessionUser.id === question.ownerId

@@ -74,3 +74,30 @@ const answerSeed = (num) => {
 };
 
 // answerSeed(200);
+
+const votePairs = [];
+const upvoteSeed = (num) => {
+    let i = 0;
+
+    while (i < num) {
+        const userId = randomNum(30);
+        const answerId = randomNum(400);
+        const duplicate = votePairs.find(
+            (vote) => vote.answerId === answerId && vote.userId === userId
+        );
+        if (duplicate) {
+            continue;
+        }
+        const votes = {
+            userId,
+            answerId,
+            createdAt: "new Date()",
+            updatedAt: "new Date()",
+        };
+        console.log(votes, ",");
+        votePairs.push(votes);
+        i++;
+    }
+};
+
+// upvoteSeed(500);
