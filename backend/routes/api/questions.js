@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const { restoreUser } = require("../../utils/auth");
 
-const { Question, Answer, User, Upvote } = require("../../db/models");
+const { Question, Answer, User } = require("../../db/models");
 
 const router = express.Router();
 
@@ -111,40 +111,16 @@ router.delete(
             const id = question.id;
 
             const relatedAnswers = await Answer.findAll({
-                include: { model: Upvote },
-                where: {
-                    questionId: id,
-                },
+                where: { questionId: id },
             });
 
-            console.log("BACKEND TESTING");
-
-            const upvoteIds = [];
-
             if (!isEmpty(relatedAnswers)) {
-                relatedAnswers.forEach((answer) => {
-                    if (answer.Upvotes.length > 0) {
-                        answer.Upvotes.forEach((vote) => {
-                            upvoteIds.push(vote.id);
-                        });
-                    }
-                });
-
-                // if (upvoteIds.length > 0) {
-                //     upvoteIds.forEach((voteId) => {
-                //         await Upvote.destroy({ where: { id: voteId } });
-                //     });
-                // }
-
                 await Answer.destroy({
-                    where: {
-                        questionId: id,
-                    },
+                    where: { questionId: id },
                 });
             }
 
             await Question.destroy({ where: { id } });
-
             return res.json({ id });
         } else {
             throw new Error("Question cannot be found.");
