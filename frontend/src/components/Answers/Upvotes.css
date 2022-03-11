@@ -17,14 +17,19 @@
 .fa-regular.fa-square-caret-up.vote-button,
 .fa-solid.fa-square-caret-up.vote-button {
     font-size: 30px;
+    transition: all linear 0.25s;
 }
-
 .fa-solid.fa-square-caret-up.vote-button.voted {
     color: #034b8c;
 }
-
+.fa-solid.fa-square-caret-up.vote-button.voted:hover {
+    color: #000000;
+}
 .fa-regular.fa-square-caret-up.vote-button.not-voted {
     color: black;
+}
+.fa-regular.fa-square-caret-up.vote-button.not-voted:hover {
+    color: #034b8c;
 }
 .fa-regular.fa-square-caret-up.vote-button.disabled-vote {
     color: rgb(221, 221, 221);
