@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as questionActions from "../../store/questions";
 import "./DeleteQuestion.css";
 
-const DeleteQuestion = ({ setShowDeleteModal, question }) => {
+const DeleteQuestion = ({ setShowDeleteModal, question, setDidDelete }) => {
     const dispatch = useDispatch();
     const [isLoaded, setIsLoaded] = useState(false);
     const sessionUser = useSelector((state) => state.session.user);
@@ -22,6 +22,7 @@ const DeleteQuestion = ({ setShowDeleteModal, question }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setDidDelete(true);
         await dispatch(questionActions.deleteQuestion(question.id));
     };
 

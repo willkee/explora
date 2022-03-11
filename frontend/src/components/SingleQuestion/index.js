@@ -14,6 +14,7 @@ const SingleQuestion = () => {
 
     const sessionUser = useSelector((state) => state.session.user);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [didDelete, setDidDelete] = useState(false);
 
     useEffect(() => {
         const loaded = async () => {
@@ -23,7 +24,7 @@ const SingleQuestion = () => {
         loaded();
     }, [dispatch, questionId]);
 
-    if (!question) {
+    if (!question && didDelete) {
         return <Redirect to="/" />;
     }
 
@@ -62,6 +63,7 @@ const SingleQuestion = () => {
                                         />
                                         <DeleteQuestionModal
                                             question={question}
+                                            setDidDelete={setDidDelete}
                                         />
                                     </div>
                                 )}
