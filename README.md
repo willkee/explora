@@ -107,13 +107,17 @@ Explora is a Quora clone where users can ask the community questions related to 
 
     <br>
 
-6.  Add the following proxy code to your package.json file in the frontend directory. If you chose any port other than `5000`, replace the port number there now.
+6.  Add a numeric value to `JWT_EXPIRES_IN`. By default, you may use `604800` which is the number of seconds in a week.
+
+<br>
+
+7.  Add the following proxy code to your package.json file in the frontend directory. If you chose any port other than `5000`, replace the port number there now.
 
         "proxy": "http://localhost:5000"
 
     <br>
 
-7.  Run the following code to run the creation of the database, migrations and seed the database.
+8.  Run the following code to run the creation of the database, migrations and seed the database.
 
         npx dotenv sequelize db:create
         npx dotenv sequelize db:migrate
@@ -121,13 +125,13 @@ Explora is a Quora clone where users can ask the community questions related to 
 
     <br>
 
-8.  Start the backend and frontend servers in the backend and frontend directories, respectively. After starting the frontend server, your browser should open the application automatically. If not, navigate to `http://localhost:3000`
+9.  Start the backend and frontend servers in the backend and frontend directories, respectively. After starting the frontend server, your browser should open the application automatically. If not, navigate to `http://localhost:3000`
 
         npm start
 
     <br>
 
-9.  You may use the demo user or sign up as a new user to take advantage of the features of the application.
+10. You may use the demo user or sign up as a new user to take advantage of the features of the application.
 
 <br>
 
@@ -139,8 +143,8 @@ Explora is a Quora clone where users can ask the community questions related to 
 
 -   The home page displays the most recent questions on the site
 -   Users can post questions
--   Users can post answers to existing questions
--   Users can upvote answers to questions
+-   Users can post answers to existing questions (but not to their own questions)
+-   Users can upvote answers to questions (but not to their own answers)
 -   Unauthenticated users can view all questions and answers
 
 <br>
