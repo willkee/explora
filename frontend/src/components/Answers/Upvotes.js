@@ -10,8 +10,6 @@ const Upvotes = ({ answer }) => {
     const sessionUser = useSelector((state) => state.session.user);
     const upvotes = useSelector((state) => Object.values(state.upvotes));
 
-    console.log("UPVOTES ARRAY", upvotes);
-
     const answerId = answer.id;
     useEffect(() => {
         const loaded = async () => {

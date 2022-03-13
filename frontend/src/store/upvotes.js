@@ -75,8 +75,6 @@ const upvoteReducer = (state = initialState, action) => {
         }
         case ADD_UPVOTE: {
             newState = { ...state, [action.data.id]: action.data };
-
-            console.log("ADD UPVOTE ACTION DATA", action.data);
             return newState;
         }
         case DELETE_UPVOTE: {
