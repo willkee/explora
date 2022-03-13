@@ -25,11 +25,7 @@
 
 .content-container {
     position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 50%;
+    top: 75px;
 }
 
 .message-notloggedin {
