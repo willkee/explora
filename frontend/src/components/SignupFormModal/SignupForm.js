@@ -75,6 +75,7 @@ const SignupForm = ({ setShowSignupModal }) => {
                         name="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        required
                     ></input>
                     <label className="form-label" htmlFor="email">
                         Email
@@ -84,6 +85,7 @@ const SignupForm = ({ setShowSignupModal }) => {
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     ></input>
                     <label className="form-label" htmlFor="password">
                         Password
@@ -94,6 +96,7 @@ const SignupForm = ({ setShowSignupModal }) => {
                         value={password}
                         autoComplete="off"
                         onChange={(e) => setPassword(e.target.value)}
+                        required
                     ></input>
                     <label className="form-label" htmlFor="confirmPassword">
                         Confirm Password
@@ -104,6 +107,7 @@ const SignupForm = ({ setShowSignupModal }) => {
                         value={confirmPassword}
                         autoComplete="off"
                         onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
                     ></input>
                     <div className="sign-up-button-container">
                         <button>Sign Up</button>
